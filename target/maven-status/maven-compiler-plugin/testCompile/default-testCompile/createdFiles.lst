@@ -1,0 +1,5 @@
+testrunner\TestRunner.class
+helper\LoggerHelper.class
+stepdefinitions\ContractRecordCreationPageSteps.class
+apphooks\ApplicationHooks.class
+stepdefinitions\LoginPageSteps.class
