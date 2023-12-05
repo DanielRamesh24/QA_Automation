@@ -37,7 +37,8 @@ public class LoginPageSteps extends  BrowerInvoke {
 	
 	@Given("the user navigates to the URL")
 	public void user_navigates_to_the_url() throws Exception {
-			browser.launch();
+			browser.launch();//Launch browser
+			System.out.println("diver");
 			driver.get(Test_Date.Datasheet("LoginPage", 1, 0));
 	}
 
