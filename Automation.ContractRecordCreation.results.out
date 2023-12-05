@@ -1,5 +1,5 @@
-2023-12-04 11:12:197 INFO  LoggerHelper:58 - user clicked login button
-2023-12-04 11:12:183 INFO  LoggerHelper:40 - user navigated to Contract
-2023-12-04 11:12:397 INFO  LoggerHelper:48 - user clicked on new button
-2023-12-04 11:12:299 INFO  LoggerHelper:63 - user enters valid data for creating new order record
-2023-12-04 11:12:504 INFO  LoggerHelper:77 - Verification & Validation is successful !!!
+2023-12-05 12:12:428 INFO  LoggerHelper:57 - user clicked login button
+2023-12-05 12:12:786 INFO  LoggerHelper:40 - user navigated to Contract
+2023-12-05 12:12:984 INFO  LoggerHelper:48 - user clicked on new button
+2023-12-05 12:12:772 INFO  LoggerHelper:63 - user enters valid data for creating new order record
+2023-12-05 12:12:12 INFO  LoggerHelper:77 - Verification & Validation is successful !!!

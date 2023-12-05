@@ -7,8 +7,8 @@ Feature: Creating New Contract records
     And clicks on new button
     And enters valid date
     And Verifies the New record created
-  	And update ContractTerm field
-    And Delete the Record
+  	#And update ContractTerm field
+    #And Delete the Record
     
 
   

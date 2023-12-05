@@ -95,6 +95,8 @@ public class ContractPage extends DriverClass{
 	}
 	
 	public void navigate_to_contractObj() throws InterruptedException {
+		Thread.sleep(10000);
+		Applauncher.click();
 		Thread.sleep(5000);
 		Search.sendKeys("Contracts");
 		Thread.sleep(5000);

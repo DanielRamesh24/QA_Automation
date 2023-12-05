@@ -52,9 +52,8 @@ public class LoginPageSteps extends  BrowerInvoke {
 	@And("clicks Login button")
 	public void clicks_login_button() throws InterruptedException {
 			LoginPage loginpage = new LoginPage(driver);
-			ContractPage Contractrecordcreationpage = new ContractPage(driver);
+			//ContractPage Contractrecordcreationpage = new ContractPage(driver);
 			loginpage.clickOnLogin(); 
-			Contractrecordcreationpage.AppLauncher();
 			log.info("user clicked login button");
 	}
 }
