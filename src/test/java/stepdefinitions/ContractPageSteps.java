@@ -33,9 +33,10 @@ public class ContractPageSteps extends BrowerInvoke {
 			
 		@Given("User navigates to Contract object")
 		public void user_navigates_to_contract_object() throws NullPointerException, InterruptedException{	
-			ContractPage Cp = new ContractPage(driver);
-			System.out.println(driver);
-			Cp.navigate_to_contractObj();
+//			ContractPage Cp = new ContractPage(driver);
+//			System.out.println(driver);
+//			Cp.navigate_to_contractObj();
+			contractPage.navigate_to_contractObj();
 			
 			log.info("user navigated to Contract");
 		}
@@ -43,23 +44,24 @@ public class ContractPageSteps extends BrowerInvoke {
 		
 		@And("clicks on new button")
 		public void clicks_on_new_button() throws InterruptedException {
-			ContractPage cp1 = new ContractPage(driver);
-			cp1.clickingNewbutton();
+//			ContractPage cp1 = new ContractPage(driver);
+//			cp1.clickingNewbutton();
+			contractPage.clickingNewbutton();
 			log.info("user clicked on new button");
 		}
 		
 		@When("enters valid date")
 		public void enters_valid_date() throws Exception {
-			ContractPage cp2 = new ContractPage(driver);
-			cp2.AccountName.sendKeys(Test_Date.Datasheet("Contract", 1, 0));
+			//ContractPage cp2 = new ContractPage(driver);
+			contractPage.AccountName.sendKeys(Test_Date.Datasheet("Contract", 1, 0));
 		  Thread.sleep(3000);
-		  cp2.AccountName.click();
-		  cp2.Acconutlookup.click();
-		  cp2.ContractTerm.sendKeys("1");
+		  contractPage.AccountName.click();
+		  contractPage.Acconutlookup.click();
+		  contractPage.ContractTerm.sendKeys("1");
 		  Thread.sleep(3000);
-		  cp2.ContractStartDatepicker.click();
-		  cp2.ContractStartDate.click();
-		  cp2.saveBtn.click();
+		  contractPage.ContractStartDatepicker.click();
+		  contractPage.ContractStartDate.click();
+		  contractPage.saveBtn.click();
 		  log.info("user enters valid data for creating new order record");
 
 		}
@@ -67,12 +69,12 @@ public class ContractPageSteps extends BrowerInvoke {
 
        @When("Verifies the New record created")
        public void verifies_the_new_record_created() throws Exception {
-    	   ContractPage cp3 = new ContractPage(driver);
+    	  // ContractPage cp3 = new ContractPage(driver);
     	   	Thread.sleep(5000);
-    	   	cp3.Details.click();
+    	   	contractPage.Details.click();
     	    String AccName ; 
     	    Thread.sleep(2000);
-			AccName = cp3.VerifyAccountName.getText();
+			AccName = contractPage.VerifyAccountName.getText();
 			if(AccName.equalsIgnoreCase(Test_Date.Datasheet("Contract", 1, 0))) {
 				  log.info("Verification & Validation is successful !!!"); 
 			  }
@@ -82,16 +84,16 @@ public class ContractPageSteps extends BrowerInvoke {
        
        @When("update ContractTerm field")
        public void update_ContractTerm_field()throws Exception {
-    	   ContractPage Contractrecordcreationpage = new ContractPage(driver);
+    	//   ContractPage Contractrecordcreationpage = new ContractPage(driver);
     	   String ContractNumber;
     	   Thread.sleep(5000);
-    	   Contractrecordcreationpage.dropDownbtn.click();
+    	   contractPage.dropDownbtn.click();
     	   Thread.sleep(5000);
-    	   Contractrecordcreationpage.editbton.click(); 
-    	   Contractrecordcreationpage.ContractTerm.clear();
-    	   Contractrecordcreationpage.ContractTerm.sendKeys("2");
-    	   Contractrecordcreationpage.saveBtn.click();
-    	   ContractNumber = Contractrecordcreationpage.ContractTerm.getText();
+    	   contractPage.editbton.click(); 
+    	   contractPage.ContractTerm.clear();
+    	   contractPage.ContractTerm.sendKeys("2");
+    	   contractPage.saveBtn.click();
+    	   ContractNumber = contractPage.ContractTerm.getText();
     	   System.out.println(ContractNumber);
     	   if(ContractNumber == "2") {
 				  log.info("Verification & Validation for updation is successful !!!"); 
@@ -103,13 +105,13 @@ public class ContractPageSteps extends BrowerInvoke {
        
        @When("Delete the Record")
        public void delete_the_record() throws Exception{
-    	   ContractPage cp5 = new ContractPage(driver);
+    	 //  ContractPage cp5 = new ContractPage(driver);
     	   Thread.sleep(2000);
-    	   cp5.dropDownbtn.click();
+    	   contractPage.dropDownbtn.click();
     	   Thread.sleep(2000);
-    	   cp5.delbtn.click();
+    	   contractPage.delbtn.click();
     	   Thread.sleep(2000);
-    	   cp5.delConfirm.click();
+    	   contractPage.delConfirm.click();
        }
 }
 		  

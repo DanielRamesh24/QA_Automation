@@ -27,6 +27,7 @@ public class ContractPage extends DriverClass{
 	
 
 	@FindBy(how =How.CSS,using="div.slds-icon-waffle")// finding element by getting its xpaths using @findby
+//	@FindBy(how =How.CSS,using="//span[text()='App Launcher']")
 	public WebElement Applauncher;
 
 	@FindBy(how =How.XPATH,using="//input[@placeholder='Search apps and items...']")
@@ -89,13 +90,13 @@ public class ContractPage extends DriverClass{
     @FindBy (how = How.XPATH, using="//button[@title='Delete']")
     public WebElement delConfirm;
   
-	public void AppLauncher() throws InterruptedException {
-		Thread.sleep(10000);
-		Applauncher.click();
-	}
+//	public void AppLauncher() throws InterruptedException {
+//		Thread.sleep(10000);
+//		Applauncher.click();
+//	}
 	
 	public void navigate_to_contractObj() throws InterruptedException {
-		Thread.sleep(10000);
+		Thread.sleep(20000);
 		Applauncher.click();
 		Thread.sleep(5000);
 		Search.sendKeys("Contracts");

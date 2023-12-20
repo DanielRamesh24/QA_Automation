@@ -35,7 +35,8 @@ import org.openqa.selenium.support.FindBy;
 		  public void enterPassword(String password) {
 		  salesforcePassword.sendKeys(password); }
 		  
-		  public void clickOnLogin() { salesforceLogin.click(); }
+		  public void clickOnLogin() 
+		  { salesforceLogin.click(); }
 		 
 		
 		 
