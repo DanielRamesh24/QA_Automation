@@ -3,7 +3,7 @@
     "line": 1,
     "elements": [
       {
-        "start_timestamp": "2023-12-05T07:09:22.996Z",
+        "start_timestamp": "2023-12-20T10:29:08.915Z",
         "line": 4,
         "name": "Login in to  Salesforce with valid credential",
         "description": "",
@@ -13,7 +13,7 @@
         "steps": [
           {
             "result": {
-              "duration": 15985668400,
+              "duration": 8704152700,
               "status": "passed"
             },
             "line": 6,
@@ -25,7 +25,7 @@
           },
           {
             "result": {
-              "duration": 345557200,
+              "duration": 758790000,
               "status": "passed"
             },
             "line": 7,
@@ -37,7 +37,7 @@
           },
           {
             "result": {
-              "duration": 10024153100,
+              "duration": 5752216700,
               "status": "passed"
             },
             "line": 8,
@@ -66,7 +66,92 @@
     "line": 1,
     "elements": [
       {
-        "start_timestamp": "2023-12-05T07:09:49.478Z",
+        "start_timestamp": "2023-12-20T10:29:24.266Z",
+        "line": 6,
+        "name": "Creating New Order record in Salesforce",
+        "description": "",
+        "id": "creating-new-order-records;creating-new-order-record-in-salesforce",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 38192694800,
+              "status": "passed"
+            },
+            "line": 9,
+            "name": "User009 navigates to order object",
+            "match": {
+              "location": "stepdefinitions.OrderCreationPageSteps.user009_navigates_to_order_object()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 5207337600,
+              "status": "passed"
+            },
+            "line": 10,
+            "name": "User009 clicks on new button",
+            "match": {
+              "location": "stepdefinitions.OrderCreationPageSteps.user009_clicks_on_new_button()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 12072812900,
+              "status": "passed"
+            },
+            "line": 11,
+            "name": "User009 enters valid data \"Order\" \u0026 \"TC_001\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"Order\"",
+                  "offset": 26
+                },
+                {
+                  "val": "\"TC_001\"",
+                  "offset": 36
+                }
+              ],
+              "location": "stepdefinitions.OrderCreationPageSteps.User009_enters_valid_data(java.lang.String,java.lang.String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 5100725000,
+              "status": "passed"
+            },
+            "line": 12,
+            "name": "User009 clicks on save button",
+            "match": {
+              "location": "stepdefinitions.OrderCreationPageSteps.user009_clicks_on_save_button()"
+            },
+            "keyword": "And "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@OrderTestcases"
+          }
+        ]
+      }
+    ],
+    "name": "Creating New Order records",
+    "description": "",
+    "id": "creating-new-order-records",
+    "keyword": "Feature",
+    "uri": "file:src/test/resources/pom/features/007_OrderObject.feature",
+    "tags": []
+  },
+  {
+    "line": 1,
+    "elements": [
+      {
+        "start_timestamp": "2023-12-20T10:30:24.858Z",
         "line": 4,
         "name": "Creating New Contract record in Salesforce",
         "description": "",
@@ -76,8 +161,9 @@
         "steps": [
           {
             "result": {
-              "duration": 22291808200,
-              "status": "passed"
+              "error_message": "org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {\"method\":\"css selector\",\"selector\":\"div.slds-icon-waffle\"}\n  (Session info: chrome\u003d120.0.6099.110)\nFor documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception\nBuild info: version: \u00274.11.0\u0027, revision: \u0027040bc5406b\u0027\nSystem info: os.name: \u0027Windows 11\u0027, os.arch: \u0027amd64\u0027, os.version: \u002710.0\u0027, java.version: \u002717.0.7\u0027\nDriver info: org.openqa.selenium.chrome.ChromeDriver\nCommand: [f03660f6472d96ba2239acefac834c69, findElement {using\u003dcss selector, value\u003ddiv.slds-icon-waffle}]\nCapabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 120.0.6099.110, chrome: {chromedriverVersion: 120.0.6099.109 (3419140ab66..., userDataDir: C:\\Users\\KIRUT1~1\\AppData\\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:51450}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:51450/devtoo..., se:cdpVersion: 120.0.6099.110, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}\nSession ID: f03660f6472d96ba2239acefac834c69\r\n\tat java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)\r\n\tat java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)\r\n\tat java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)\r\n\tat java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)\r\n\tat java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)\r\n\tat org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)\r\n\tat org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)\r\n\tat org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:52)\r\n\tat org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:191)\r\n\tat org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:196)\r\n\tat org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:171)\r\n\tat org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:518)\r\n\tat org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)\r\n\tat org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)\r\n\tat org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:355)\r\n\tat org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:349)\r\n\tat org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:68)\r\n\tat org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)\r\n\tat jdk.proxy2/jdk.proxy2.$Proxy18.click(Unknown Source)\r\n\tat pages.ContractPage.navigate_to_contractObj(ContractPage.java:100)\r\n\tat stepdefinitions.ContractPageSteps.user_navigates_to_contract_object(ContractPageSteps.java:39)\r\n\tat ✽.User navigates to Contract object(file:///C:/Users/kirut1500955/eclipse-workspace/TrailWork/.metadata/NewFork1QA/src/test/resources/pom/features/008_ContractObject.feature:6)\r\n",
+              "duration": 20042955000,
+              "status": "failed"
             },
             "line": 6,
             "name": "User navigates to Contract object",
@@ -88,8 +174,7 @@
           },
           {
             "result": {
-              "duration": 10197548100,
-              "status": "passed"
+              "status": "skipped"
             },
             "line": 7,
             "name": "clicks on new button",
@@ -100,8 +185,7 @@
           },
           {
             "result": {
-              "duration": 6785596100,
-              "status": "passed"
+              "status": "skipped"
             },
             "line": 8,
             "name": "enters valid date",
@@ -112,8 +196,8 @@
           },
           {
             "result": {
-              "duration": 7240516900,
-              "status": "passed"
+              "duration": 997200,
+              "status": "skipped"
             },
             "line": 9,
             "name": "Verifies the New record created",
