@@ -1,12 +1,30 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<testsuite errors="0" failures="0" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="2" time="73.246">
-    <testcase classname="Login into Salesforce" name="Login in to  Salesforce with valid credential" time="26.44">
+<testsuite errors="0" failures="0" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="5" time="205.601">
+    <testcase classname="Login into Salesforce" name="Login into Salesforce with valid credential" time="20.061">
         <system-out><![CDATA[Given the user navigates to the URL.........................................passed
 And the user enters valid credential........................................passed
 And clicks Login button.....................................................passed
 ]]></system-out>
     </testcase>
-    <testcase classname="Creating New Contract records" name="Creating New Contract record in Salesforce" time="46.535">
+    <testcase classname="Scenarios for Campaign object" name="Creating New Campaign record" time="39.327">
+        <system-out><![CDATA[Given user is logged in and clicks the campaign tab.........................passed
+When Campaign creation......................................................passed
+]]></system-out>
+    </testcase>
+    <testcase classname="Scenarios for Lead object" name="Creating New Lead record" time="47.565">
+        <system-out><![CDATA[Given User is logged in and searches for lead object........................passed
+Then Create a new Lead with DataTable.......................................passed
+And User Delete the Record..................................................passed
+]]></system-out>
+    </testcase>
+    <testcase classname="Scenarios for Order object" name="Creating New Order record" time="58.103">
+        <system-out><![CDATA[When User009 navigates to order object......................................passed
+And User009 clicks on new button............................................passed
+And User009 enters valid data "Order" & "TC_001"............................passed
+And User009 clicks on save button...........................................passed
+]]></system-out>
+    </testcase>
+    <testcase classname="Scenarios for Contract object" name="Creating New Contract record" time="40.176">
         <system-out><![CDATA[Given User navigates to Contract object.....................................passed
 And clicks on new button....................................................passed
 And enters valid date.......................................................passed

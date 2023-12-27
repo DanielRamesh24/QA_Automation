@@ -26,6 +26,7 @@
 	</classpathentry>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8">
 		<attributes>
+			<attribute name="module" value="true"/>
 			<attribute name="maven.pomderived" value="true"/>
 		</attributes>
 	</classpathentry>
@@ -34,16 +35,5 @@
 			<attribute name="maven.pomderived" value="true"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="C:/Users/daniel.r/Downloads/jar_files/apache-poi-1.0.3.3.jar"/>
-	<classpathentry kind="lib" path="C:/Users/daniel.r/Downloads/jar_files/jakarta.activation-1.0.3.3.jar"/>
-	<classpathentry kind="lib" path="C:/Users/daniel.r/Downloads/jar_files/jakarta.validation-api-1.0.3.3.jar"/>
-	<classpathentry kind="lib" path="C:/Users/daniel.r/Downloads/jar_files/commons-logging-1.0.3.3.jar"/>
-	<classpathentry kind="lib" path="C:/Users/daniel.r/Downloads/jar_files/stax2-api-4.2.jar"/>
-	<classpathentry kind="lib" path="C:/Users/daniel.r/Downloads/jar_files/commons-codec-1.0.3.3.jar"/>
-	<classpathentry kind="lib" path="C:/Users/daniel.r/Downloads/jar_files/commons-math3-1.0.3.3.jar"/>
-	<classpathentry kind="lib" path="C:/Users/daniel.r/Downloads/jar_files/commons-collections4-1.0.3.3.jar"/>
-	<classpathentry kind="lib" path="C:/Users/daniel.r/Downloads/jar_files/jakarta.xml.bind-api-1.0.3.3.jar"/>
-	<classpathentry kind="lib" path="C:/Users/daniel.r/Downloads/jar_files/javax.activation-1.0.3.3.jar"/>
-	<classpathentry kind="lib" path="C:/Users/daniel.r/Downloads/jar_files/stax-ex-1.8.2.jar"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>
