@@ -3,47 +3,47 @@
     "line": 1,
     "elements": [
       {
-        "start_timestamp": "2023-12-05T07:09:22.996Z",
+        "start_timestamp": "2023-12-27T12:38:09.094Z",
         "line": 4,
-        "name": "Login in to  Salesforce with valid credential",
+        "name": "Login into Salesforce with valid credential",
         "description": "",
-        "id": "login-into-salesforce;login-in-to--salesforce-with-valid-credential",
+        "id": "login-into-salesforce;login-into-salesforce-with-valid-credential",
         "type": "scenario",
         "keyword": "Scenario",
         "steps": [
           {
             "result": {
-              "duration": 15985668400,
+              "duration": 8543695100,
               "status": "passed"
             },
             "line": 6,
             "name": "the user navigates to the URL",
             "match": {
-              "location": "stepdefinitions.LoginPageSteps.user_navigates_to_the_url()"
+              "location": "stepdefinitions.LoginSteps.user_navigates_to_the_url()"
             },
             "keyword": "Given "
           },
           {
             "result": {
-              "duration": 345557200,
+              "duration": 410412700,
               "status": "passed"
             },
             "line": 7,
             "name": "the user enters valid credential",
             "match": {
-              "location": "stepdefinitions.LoginPageSteps.the_user_enters_valid_credential()"
+              "location": "stepdefinitions.LoginSteps.the_user_enters_valid_credential()"
             },
             "keyword": "And "
           },
           {
             "result": {
-              "duration": 10024153100,
+              "duration": 11035195400,
               "status": "passed"
             },
             "line": 8,
             "name": "clicks Login button",
             "match": {
-              "location": "stepdefinitions.LoginPageSteps.clicks_login_button()"
+              "location": "stepdefinitions.LoginSteps.clicks_login_button()"
             },
             "keyword": "And "
           }
@@ -63,62 +63,277 @@
     "tags": []
   },
   {
-    "line": 1,
+    "line": 2,
     "elements": [
       {
-        "start_timestamp": "2023-12-05T07:09:49.478Z",
-        "line": 4,
-        "name": "Creating New Contract record in Salesforce",
+        "start_timestamp": "2023-12-27T12:38:29.189Z",
+        "line": 3,
+        "name": "Creating New Campaign record",
         "description": "",
-        "id": "creating-new-contract-records;creating-new-contract-record-in-salesforce",
+        "id": "scenarios-for-campaign-object;creating-new-campaign-record",
         "type": "scenario",
-        "keyword": "Scenario Outline",
+        "keyword": "Scenario",
         "steps": [
           {
             "result": {
-              "duration": 22291808200,
+              "duration": 18445465700,
               "status": "passed"
             },
-            "line": 6,
-            "name": "User navigates to Contract object",
+            "line": 4,
+            "name": "user is logged in and clicks the campaign tab",
             "match": {
-              "location": "stepdefinitions.ContractPageSteps.user_navigates_to_contract_object()"
+              "location": "stepdefinitions.CampaignSteps.user_is_logged_in_and_clicks_the_campaign_tab()"
             },
             "keyword": "Given "
           },
           {
             "result": {
-              "duration": 10197548100,
+              "duration": 20867429800,
               "status": "passed"
             },
-            "line": 7,
-            "name": "clicks on new button",
+            "line": 5,
+            "name": "Campaign creation",
             "match": {
-              "location": "stepdefinitions.ContractPageSteps.clicks_on_new_button()"
+              "location": "stepdefinitions.CampaignSteps.campaign_creation()"
             },
-            "keyword": "And "
+            "keyword": "When "
+          }
+        ]
+      }
+    ],
+    "name": "Scenarios for Campaign object",
+    "description": "",
+    "id": "scenarios-for-campaign-object",
+    "keyword": "Feature",
+    "uri": "file:src/test/resources/pom/features/002_Campaign.feature",
+    "tags": []
+  },
+  {
+    "line": 2,
+    "elements": [
+      {
+        "start_timestamp": "2023-12-27T12:39:08.547Z",
+        "line": 3,
+        "name": "Creating New Lead record",
+        "description": "",
+        "id": "scenarios-for-lead-object;creating-new-lead-record",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 5132516900,
+              "status": "passed"
+            },
+            "line": 4,
+            "name": "User is logged in and searches for lead object",
+            "match": {
+              "location": "stepdefinitions.LeadSteps.user_is_logged_in_and_searches_for_lead_object()"
+            },
+            "keyword": "Given "
           },
           {
             "result": {
-              "duration": 6785596100,
+              "duration": 27960673300,
               "status": "passed"
             },
-            "line": 8,
-            "name": "enters valid date",
+            "line": 5,
+            "name": "Create a new Lead with DataTable",
             "match": {
-              "location": "stepdefinitions.ContractPageSteps.enters_valid_date()"
+              "location": "stepdefinitions.LeadSteps.create_a_new_lead_with_data_table(io.cucumber.datatable.DataTable)"
             },
-            "keyword": "And "
+            "rows": [
+              {
+                "cells": [
+                  "First Name",
+                  "Last Name",
+                  "Company",
+                  "Title"
+                ]
+              },
+              {
+                "cells": [
+                  "AKilapalani",
+                  "Lead",
+                  "Meta Soft Tech",
+                  "SEIII"
+                ]
+              },
+              {
+                "cells": [
+                  "Aki 2",
+                  "Lead",
+                  "Mastek",
+                  "SEII"
+                ]
+              }
+            ],
+            "keyword": "Then "
           },
           {
             "result": {
-              "duration": 7240516900,
+              "duration": 14460435500,
               "status": "passed"
             },
             "line": 9,
+            "name": "User Delete the Record",
+            "match": {
+              "location": "stepdefinitions.LeadSteps.user_delete_the_record()"
+            },
+            "keyword": "And "
+          }
+        ]
+      }
+    ],
+    "name": "Scenarios for Lead object",
+    "description": "",
+    "id": "scenarios-for-lead-object",
+    "keyword": "Feature",
+    "uri": "file:src/test/resources/pom/features/003_LeadCreation.feature",
+    "tags": []
+  },
+  {
+    "line": 1,
+    "elements": [
+      {
+        "start_timestamp": "2023-12-27T12:39:56.128Z",
+        "line": 7,
+        "name": "Creating New Order record",
+        "description": "",
+        "id": "scenarios-for-order-object;creating-new-order-record",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 35501066700,
+              "status": "passed"
+            },
+            "line": 10,
+            "name": "User009 navigates to order object",
+            "match": {
+              "location": "stepdefinitions.OrderSteps.user009_navigates_to_order_object()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 5216537400,
+              "status": "passed"
+            },
+            "line": 11,
+            "name": "User009 clicks on new button",
+            "match": {
+              "location": "stepdefinitions.OrderSteps.user009_clicks_on_new_button()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 12247181600,
+              "status": "passed"
+            },
+            "line": 12,
+            "name": "User009 enters valid data \"Order\" \u0026 \"TC_001\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"Order\"",
+                  "offset": 26
+                },
+                {
+                  "val": "\"TC_001\"",
+                  "offset": 36
+                }
+              ],
+              "location": "stepdefinitions.OrderSteps.User009_enters_valid_data(java.lang.String,java.lang.String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 5131685400,
+              "status": "passed"
+            },
+            "line": 13,
+            "name": "User009 clicks on save button",
+            "match": {
+              "location": "stepdefinitions.OrderSteps.user009_clicks_on_save_button()"
+            },
+            "keyword": "And "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@OrderTestcases"
+          }
+        ]
+      }
+    ],
+    "name": "Scenarios for Order object",
+    "description": "",
+    "id": "scenarios-for-order-object",
+    "keyword": "Feature",
+    "uri": "file:src/test/resources/pom/features/007_OrderObject.feature",
+    "tags": []
+  },
+  {
+    "line": 1,
+    "elements": [
+      {
+        "start_timestamp": "2023-12-27T12:40:54.242Z",
+        "line": 5,
+        "name": "Creating New Contract record",
+        "description": "",
+        "id": "scenarios-for-contract-object;creating-new-contract-record",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 15723441400,
+              "status": "passed"
+            },
+            "line": 7,
+            "name": "User navigates to Contract object",
+            "match": {
+              "location": "stepdefinitions.ContractSteps.user_navigates_to_contract_object()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 10131054100,
+              "status": "passed"
+            },
+            "line": 8,
+            "name": "clicks on new button",
+            "match": {
+              "location": "stepdefinitions.ContractSteps.clicks_on_new_button()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 7080134800,
+              "status": "passed"
+            },
+            "line": 9,
+            "name": "enters valid date",
+            "match": {
+              "location": "stepdefinitions.ContractSteps.enters_valid_date()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 7236505900,
+              "status": "passed"
+            },
+            "line": 10,
             "name": "Verifies the New record created",
             "match": {
-              "location": "stepdefinitions.ContractPageSteps.verifies_the_new_record_created()"
+              "location": "stepdefinitions.ContractSteps.verifies_the_new_record_created()"
             },
             "keyword": "And "
           }
@@ -130,9 +345,9 @@
         ]
       }
     ],
-    "name": "Creating New Contract records",
+    "name": "Scenarios for Contract object",
     "description": "",
-    "id": "creating-new-contract-records",
+    "id": "scenarios-for-contract-object",
     "keyword": "Feature",
     "uri": "file:src/test/resources/pom/features/008_ContractObject.feature",
     "tags": []

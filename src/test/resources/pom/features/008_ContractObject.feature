@@ -1,7 +1,8 @@
-Feature: Creating New Contract records
+Feature: Scenarios for Contract object 
+
 
    @TC_ContractObject
-  Scenario Outline: Creating New Contract record in Salesforce
+  Scenario: Creating New Contract record 
    
     Given User navigates to Contract object
     And clicks on new button

@@ -5,10 +5,10 @@ import org.junit.runner.RunWith;
 import io.cucumber.junit.Cucumber;
 import io.cucumber.junit.CucumberOptions;
 
+
 @RunWith(Cucumber.class)
 @CucumberOptions(
-		features = "src/test/resources/pom/features", 
-		
+		features = "src/test/resources/pom/features",
 		glue = {"stepdefinitions"},
 		plugin = {"pretty",
 				"html:target/HtmlReports",
@@ -16,7 +16,6 @@ import io.cucumber.junit.CucumberOptions;
 				"junit:target/JUnitReports/report.xml"}
 		
 		)
-
 
 
 public class TestRunner {

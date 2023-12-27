@@ -26,7 +26,7 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.When;
 import io.github.bonigarcia.wdm.WebDriverManager;
 
-public class LoginPageSteps extends  BrowerInvoke {
+public class LoginSteps extends  BrowerInvoke {
 	
 
 	Logger log = LoggerHelper.getLogger(LoggerHelper.class);

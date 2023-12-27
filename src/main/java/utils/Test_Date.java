@@ -16,7 +16,7 @@ import constants.Constants;
 public class Test_Date {
 
 	public static String Datasheet(String sheetname, int rows, int columns) throws Exception{
-		File location = new File("C:\\Users\\daniel.r\\eclipse-workspace\\CucumberFramework\\src\\test\\resources\\TData.xlsx");
+		File location = new File(Constants.datafilepath);
 		FileInputStream fin = new FileInputStream(location);
 		Workbook workbook = new XSSFWorkbook(fin);
 		Sheet sheet = workbook.getSheet(sheetname);

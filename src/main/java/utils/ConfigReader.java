@@ -27,7 +27,7 @@ public class ConfigReader {
 	//  String result = StringUtils.EMPTY; 
 	  prop = new Properties(); 
 	  try {
-	  FileInputStream ip = new FileInputStream("C:\\Users\\daniel.r\\eclipse-workspace\\CucumberFramework\\src\\test\\resources\\configuration\\configuration.properties");
+	  FileInputStream ip = new FileInputStream("C:\\Users\\abina1501006\\Automation Projects\\folder1\\QA_Automation\\src\\test\\resources\\configuration\\configuration.properties");
 	  prop.load(ip);
 	  
 	  } catch (FileNotFoundException e) 

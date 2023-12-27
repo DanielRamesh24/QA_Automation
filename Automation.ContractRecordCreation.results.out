@@ -1,5 +1,9 @@
-2023-12-05 12:12:428 INFO  LoggerHelper:57 - user clicked login button
-2023-12-05 12:12:786 INFO  LoggerHelper:40 - user navigated to Contract
-2023-12-05 12:12:984 INFO  LoggerHelper:48 - user clicked on new button
-2023-12-05 12:12:772 INFO  LoggerHelper:63 - user enters valid data for creating new order record
-2023-12-05 12:12:12 INFO  LoggerHelper:77 - Verification & Validation is successful !!!
+2023-12-27 18:12:151 INFO  LoggerHelper:58 - user clicked login button
+2023-12-27 18:12:633 INFO  LoggerHelper:23 - user009 navigated to Orders
+2023-12-27 18:12:850 INFO  LoggerHelper:29 - user009 clicked on new button
+2023-12-27 18:12:98 INFO  LoggerHelper:35 - user009 enters valid data for creating new order record
+2023-12-27 18:12:230 INFO  LoggerHelper:41 - User009 clicked on save button
+2023-12-27 18:12:928 INFO  LoggerHelper:33 - user navigated to Contract
+2023-12-27 18:12:99 INFO  LoggerHelper:41 - user clicked on new button
+2023-12-27 18:12:179 INFO  LoggerHelper:56 - user enters valid data for creating new order record
+2023-12-27 18:12:416 INFO  LoggerHelper:68 - Verification & Validation is successful !!!
