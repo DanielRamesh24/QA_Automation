@@ -47,6 +47,7 @@ public class LoginPageSteps extends  BrowerInvoke {
     	  	LoginPage loginpage = new LoginPage(driver);
     	  	loginpage.enterUserName(Test_Date.Datasheet("LoginPage", 1, 1));
     	  	loginpage.enterPassword(Test_Date.Datasheet("LoginPage", 1, 2));
+    	  	log.info("login page : "+loginpage);
     
     }
 	

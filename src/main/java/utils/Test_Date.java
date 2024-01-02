@@ -16,13 +16,14 @@ import constants.Constants;
 public class Test_Date {
 
 	public static String Datasheet(String sheetname, int rows, int columns) throws Exception{
-		File location = new File("C:\\Users\\daniel.r\\eclipse-workspace\\CucumberFramework\\src\\test\\resources\\TData.xlsx");
+		File location = new File(Constants.datafilepath);
 		FileInputStream fin = new FileInputStream(location);
 		Workbook workbook = new XSSFWorkbook(fin);
 		Sheet sheet = workbook.getSheet(sheetname);
 		Row row1 = sheet.getRow(rows);
 		Cell cell2 = row1.getCell(columns);
 		String Value = cell2.getStringCellValue();
+		System.out.println("SF credentials : "+Value);
 		return Value;
 		}
 }
