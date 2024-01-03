@@ -6,19 +6,19 @@ import org.apache.log4j.Logger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import CommonMethod.baseclass;
-import browserfactory.BrowerInvoke;
+import browserfactory.BrowserInvoke;
 import pages.ContractPage;
-import utils.Test_Date;
+import utils.Test_Data;
 import helper.LoggerHelper;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.When;
 
-public class ContractSteps extends BrowerInvoke {
+public class ContractSteps extends BrowserInvoke {
 
 	Logger log = LoggerHelper.getLogger(LoggerHelper.class);
 	public static ContractPage contractPage = new ContractPage(driver);
-	public static BrowerInvoke browser = new BrowerInvoke();
+	public static BrowserInvoke browser = new BrowserInvoke();
 	public static baseclass bc = new baseclass();
 	public JavascriptExecutor j = (JavascriptExecutor) driver;
 
@@ -44,7 +44,7 @@ public class ContractSteps extends BrowerInvoke {
 	@When("enters valid date")
 	public void enters_valid_date() throws Exception {
 		presenceOfElement(driver, By.xpath("//h2[text()='New Contract']"));
-		contractPage.AccountName.sendKeys(Test_Date.Datasheet("Contract", 1, 0));
+		contractPage.AccountName.sendKeys(Test_Data.Datasheet("Contract", 1, 0));
 		Thread.sleep(3000);
 		contractPage.AccountName.click();
 		contractPage.Acconutlookup.click();
@@ -64,7 +64,7 @@ public class ContractSteps extends BrowerInvoke {
 		String AccName;
 		Thread.sleep(2000);
 		AccName = contractPage.VerifyAccountName.getText();
-		if (AccName.equalsIgnoreCase(Test_Date.Datasheet("Contract", 1, 0))) {
+		if (AccName.equalsIgnoreCase(Test_Data.Datasheet("Contract", 1, 0))) {
 			log.info("Verification & Validation is successful !!!");
 		} else
 			log.info("Verification & Validation is Failed ");

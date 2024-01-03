@@ -2,19 +2,19 @@ package stepdefinitions;
 
 import org.apache.log4j.Logger;
 
-import browserfactory.BrowerInvoke;
+import browserfactory.BrowserInvoke;
 import pages.OrderPage;
 
 import helper.LoggerHelper;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.When;
 
-public class OrderSteps extends BrowerInvoke {
+public class OrderSteps extends BrowserInvoke {
 
 	Logger log = LoggerHelper.getLogger(LoggerHelper.class);
 	OrderPage orderrecordcreationpage = new OrderPage(driver);
 
-	BrowerInvoke browser = new BrowerInvoke();
+	BrowserInvoke browser = new BrowserInvoke();
 
 	@When("User009 navigates to order object")
 	public void user009_navigates_to_order_object() throws InterruptedException, NullPointerException {

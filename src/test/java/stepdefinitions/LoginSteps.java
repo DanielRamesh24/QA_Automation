@@ -9,29 +9,30 @@ import java.util.Properties;
 import org.apache.log4j.Logger;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.testng.xml.LaunchSuite;
 
 import apphooks.ApplicationHooks;
-import browserfactory.BrowerInvoke;
+import browserfactory.BrowserInvoke;
 import browserfactory.BrowserFactory;
 import cucumber.api.java.Before;
 import pages.ContractPage;
 import pages.LoginPage;
 import utils.ConfigReader;
 import utils.ExcelUtils;
-import utils.Test_Date;
+import utils.Test_Data;
 import helper.LoggerHelper;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.When;
 import io.github.bonigarcia.wdm.WebDriverManager;
 
-public class LoginSteps extends  BrowerInvoke {
+public class LoginSteps extends  BrowserInvoke {
 	
 
 	Logger log = LoggerHelper.getLogger(LoggerHelper.class);
 	LoginPage loginpage = new LoginPage(driver);
-	BrowerInvoke browser = new BrowerInvoke();
+	BrowserInvoke browser = new BrowserInvoke();
 	
 	
 	
@@ -39,14 +40,14 @@ public class LoginSteps extends  BrowerInvoke {
 	public void user_navigates_to_the_url() throws Exception {
 			browser.launch();//Launch browser
 			System.out.println("driver");
-			driver.get(Test_Date.Datasheet("LoginPage", 1, 0));
+			driver.get(Test_Data.Datasheet("LoginPage", 1, 0));
 	}
 
       @And("the user enters valid credential")
      public void the_user_enters_valid_credential() throws Exception {
     	  	LoginPage loginpage = new LoginPage(driver);
-    	  	loginpage.enterUserName(Test_Date.Datasheet("LoginPage", 1, 1));
-    	  	loginpage.enterPassword(Test_Date.Datasheet("LoginPage", 1, 2));
+    	  	loginpage.enterUserName(Test_Data.Datasheet("LoginPage", 1, 1));
+    	  	loginpage.enterPassword(Test_Data.Datasheet("LoginPage", 1, 2));
     
     }
 	
@@ -56,5 +57,8 @@ public class LoginSteps extends  BrowerInvoke {
 			//ContractPage Contractrecordcreationpage = new ContractPage(driver);
 			loginpage.clickOnLogin(); 
 			log.info("user clicked login button");
+	
+	
+	
 	}
 }

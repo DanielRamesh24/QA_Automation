@@ -6,7 +6,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
 
 import utils.SeleniumUtils;
-import utils.Test_Date;
+import utils.Test_Data;
 import abstractclass.DriverClass;
 
 public class OrderPage extends DriverClass {
@@ -84,12 +84,12 @@ public class OrderPage extends DriverClass {
 
 	public void creatingNewRecord(String methodName, String Tc_id) throws Exception, InterruptedException {
 
-		AccountName.sendKeys(Test_Date.Datasheet("Order", 1, 1));
+		AccountName.sendKeys(Test_Data.Datasheet("Order", 1, 1));
 		Thread.sleep(3000);
 		AccountName.click();
 		Acconutlookup.click();
 
-		ContractNumber.sendKeys(Test_Date.Datasheet("Order", 1, 2));
+		ContractNumber.sendKeys(Test_Data.Datasheet("Order", 1, 2));
 		Thread.sleep(3000);
 		Contractlookup.click();
 		OrderStartDatepicker.click();
@@ -106,7 +106,7 @@ public class OrderPage extends DriverClass {
 	public void verifyCreatedRecord(String methodName, String Tc_id) throws Exception, InterruptedException {
 		Details.click();
 
-		String expectedAccountName = Test_Date.Datasheet("Order", 1, 1);
+		String expectedAccountName = Test_Data.Datasheet("Order", 1, 1);
 		String actualAccountName = VerifyAccountName.getText();
 		if (expectedAccountName.equals(actualAccountName)) {
 			SeleniumUtils.matchingHighlights(driver, VerifyAccountName);
@@ -116,7 +116,7 @@ public class OrderPage extends DriverClass {
 			Thread.sleep(5000);
 		}
 
-		String expectedContractNumber = Test_Date.Datasheet("Order", 1, 2);
+		String expectedContractNumber = Test_Data.Datasheet("Order", 1, 2);
 		String actualContractNumber = VerifyContractNumber.getText();
 		if (expectedContractNumber.equals(actualContractNumber)) {
 			System.out.println("Passed");
