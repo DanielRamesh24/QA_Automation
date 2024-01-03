@@ -1,7 +1,7 @@
 package stepdefinitions;
 
 import CommonMethod.baseclass;
-import browserfactory.BrowerInvoke;
+import browserfactory.BrowserInvoke;
 import helper.LoggerHelper;
 import pages.ContractPage;
 import pages.LeadPage;
@@ -18,13 +18,13 @@ import org.apache.log4j.Logger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 
-public class LeadSteps extends BrowerInvoke {
+public class LeadSteps extends BrowserInvoke {
 
 	Logger log = LoggerHelper.getLogger(LoggerHelper.class);
 	public LeadPage leadPage = new LeadPage(driver);
 	public ContractPage contractPage = new ContractPage(driver);
 	public baseclass bc = new baseclass();
-	public BrowerInvoke browser = new BrowerInvoke();
+	public BrowserInvoke browser = new BrowserInvoke();
 
 	@Given("User is logged in and searches for lead object")
 	public void user_is_logged_in_and_searches_for_lead_object() throws InterruptedException, IOException {

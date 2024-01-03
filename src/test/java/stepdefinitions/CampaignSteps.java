@@ -1,7 +1,7 @@
 package stepdefinitions;
 
 import CommonMethod.baseclass;
-import browserfactory.BrowerInvoke;
+import browserfactory.BrowserInvoke;
 import helper.LoggerHelper;
 import pages.CampaignPage;
 import io.cucumber.java.en.Given;
@@ -12,10 +12,10 @@ import java.io.IOException;
 import org.apache.log4j.Logger;
 import org.openqa.selenium.By;
 
-public class CampaignSteps extends BrowerInvoke {
+public class CampaignSteps extends BrowserInvoke {
 	Logger log = LoggerHelper.getLogger(LoggerHelper.class);
 	public CampaignPage campaignPage = new CampaignPage(driver);
-	BrowerInvoke browser = new BrowerInvoke();
+	BrowserInvoke browser = new BrowserInvoke();
 	public static baseclass bc = new baseclass();
 
 	@Given("user is logged in and clicks the campaign tab")
