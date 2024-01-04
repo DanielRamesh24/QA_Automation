@@ -1,5 +1,6 @@
 package pages;
 
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -92,6 +93,8 @@ public class OrderPage extends DriverClass {
 		ContractNumber.sendKeys(Test_Data.Datasheet("Order", 1, 2));
 		Thread.sleep(3000);
 		Contractlookup.click();
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("arguments[0].scrollIntoView();",OrderStartDatepicker);
 		OrderStartDatepicker.click();
 		OrderStartDate.click();
 		Thread.sleep(5000);
