@@ -32,7 +32,7 @@ public class ContractSteps extends BrowserInvoke {
 		contractPage.Contract.click();
 		log.info("user navigated to Contract");
 		driver.navigate().refresh();
-		Thread.sleep(3000);
+		Thread.sleep(5000);
 	}
 
 	@And("clicks on new button")
