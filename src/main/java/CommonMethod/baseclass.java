@@ -5,6 +5,7 @@ import java.time.Duration;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -58,6 +59,11 @@ public class baseclass {
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(40));
 		return wait.until(ExpectedConditions.presenceOfElementLocated(by));
 
+	}
+	
+	public static void javaexeClick(WebElement ele) {
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("arguments[0].click()", ele);
 	}
 
 }
