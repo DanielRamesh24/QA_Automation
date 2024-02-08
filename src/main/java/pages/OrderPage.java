@@ -49,8 +49,6 @@ public class OrderPage extends DriverClass {
 	public WebElement Acconutlookup;
 
 	@FindBy(how = How.XPATH, using = "//a[text()='Details']")
-	// a[text()='Details']
-	// span[text()='Details']
 	public WebElement Details;
 
 	@FindBy(how = How.XPATH, using = "(//span[text()='Kevin Testing'])[2]")
@@ -94,7 +92,7 @@ public class OrderPage extends DriverClass {
 		Thread.sleep(3000);
 		Contractlookup.click();
 		JavascriptExecutor js = (JavascriptExecutor) driver;
-		js.executeScript("arguments[0].scrollIntoView();",OrderStartDatepicker);
+		js.executeScript("arguments[0].scrollIntoView();", OrderStartDatepicker);
 		OrderStartDatepicker.click();
 		OrderStartDate.click();
 		Thread.sleep(5000);

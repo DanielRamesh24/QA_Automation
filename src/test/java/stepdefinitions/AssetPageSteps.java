@@ -2,30 +2,13 @@ package stepdefinitions;
 
 
 import org.apache.log4j.Logger;
-import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.interactions.Actions;
-
-import com.github.dockerjava.api.model.Driver;
-
-import CommonMethod.baseclass;
-import abstractclass.DriverClass;
 import browserfactory.BrowserInvoke;
-import browserfactory.BrowserFactory;
 import pages.AssetPage;
-import pages.ContractPage;
-import pages.LoginPage;
-import utils.ExcelUtils;
-import utils.SeleniumUtils;
 import utils.Test_Data;
 import helper.LoggerHelper;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
-import io.cucumber.java.en.Then;
-import io.cucumber.java.en.When;
 
 
 public class AssetPageSteps extends BrowserInvoke {
