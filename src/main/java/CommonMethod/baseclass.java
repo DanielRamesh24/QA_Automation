@@ -62,5 +62,10 @@ public class baseclass {
 		return wait.until(ExpectedConditions.presenceOfElementLocated(by));
 
 	}
+	
+	public static void javaexeClick(WebElement ele) {
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("arguments[0].click()", ele);
+	}
 
 }

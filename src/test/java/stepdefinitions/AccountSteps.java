@@ -19,15 +19,17 @@ public class AccountSteps extends BrowserInvoke {
 	public static AccountPage acc = new AccountPage(driver);
 	public static BrowserInvoke browser = new BrowserInvoke();
 	public static baseclass bc = new baseclass();
-
+	
 	@Given("Click App launcher and search Accounts and Choose accounts")
-	public void click_App_launcher_and_search_Accounts_and_Click_enter() throws InterruptedException, IOException {
-		staticWait(10);
+	public void click_app_launcher_and_search_accounts_and_choose_accounts() throws InterruptedException, IOException {
+	    
+	    staticWait(10);
 		// acc = new Account();
 		Thread.sleep(5000);
 		bc.navigate_to_Objects("Accounts");
 		acc.getClickaccount().click();
 	}
+
 
 	@And("Click New button")
 	public void click_Account_tab_and_click_New_button() {
