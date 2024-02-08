@@ -1,11 +1,15 @@
 package pages;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
+
+import CommonMethod.baseclass;
 import abstractclass.DriverClass;
+import utils.Test_Data;
 
 public class CampaignPage extends DriverClass {
 	public CampaignPage(WebDriver driver) {
@@ -40,17 +44,16 @@ public class CampaignPage extends DriverClass {
 		j.executeScript("arguments[0].click();", CampaignTab);
 	}
 
-	public void createcampaign() throws InterruptedException {
+	public void createcampaign() throws Exception {
 
-		Thread.sleep(5000);
+		baseclass.presenceOfElement(driver, By.xpath(
+				"//img[@src='https://mastek-dev-ed.develop.my.salesforce.com/img/icon/t4v35/standard/campaign_120.png']"));
 		NewCampgn.click();
-
-		Thread.sleep(5000);
-		CampaignName.sendKeys("QA Campaign");
+		baseclass.staticWait(5);
+		baseclass.presenceOfElement(driver, By.xpath("//h2[text()='New Campaign']"));
+		CampaignName.sendKeys(Test_Data.Datasheet("Campaign", 1, 0));
 		ActiveChkbox.click();
-		Type.sendKeys("Webinar");
 		SaveBtn.click();
-		Thread.sleep(10000);
 	}
 
 }

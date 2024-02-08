@@ -9,11 +9,8 @@ import io.cucumber.datatable.DataTable;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
-import io.cucumber.java.en.When;
-
 import java.io.IOException;
 import java.util.List;
-
 import org.apache.log4j.Logger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
@@ -31,7 +28,7 @@ public class LeadSteps extends BrowserInvoke {
 		baseclass.presenceOfElement(driver, By.xpath("//span[text()='Related']"));
 		JavascriptExecutor j = (JavascriptExecutor) driver;
 		j.executeScript("arguments[0].click();", leadPage.LeadTab);
-		Thread.sleep(5000);
+		baseclass.staticWait(5);
 
 	}
 
@@ -58,5 +55,5 @@ public class LeadSteps extends BrowserInvoke {
 		contractPage.delConfirm.click();
 		Thread.sleep(2000);
 	}
-	
+
 }
