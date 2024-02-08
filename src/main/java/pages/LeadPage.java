@@ -1,18 +1,16 @@
 package pages;
 
-import java.io.File;
 import java.io.IOException;
 
-import org.apache.commons.io.FileUtils;
+import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.OutputType;
-import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
+
+import CommonMethod.baseclass;
 import abstractclass.DriverClass;
-import constants.Constants;
 
 public class LeadPage extends DriverClass {
 
@@ -69,24 +67,21 @@ public class LeadPage extends DriverClass {
 
 	@FindBy(how = How.XPATH, using = "//span[contains(@class,'label bBody')][normalize-space()='Delete']")
 	public WebElement DeleteYes;
-	
+
 	@FindBy(how = How.XPATH, using = "//span[text()='Delete']")
 	public WebElement Leaddelbtn;
 
 	public void LeadCreatedata(String FirstName, String LastName, String Company, String Title)
 			throws InterruptedException, IOException {
-
+		driver.navigate().refresh();
 		JavascriptExecutor j = (JavascriptExecutor) driver;
 		j.executeScript("arguments[0].click();", newLead);
-
-		Thread.sleep(5000);
-		// Copy the file to a location and use try catch block to handle exception
-		Thread.sleep(15000);
+		baseclass.presenceOfElement(driver, By.xpath("//span[text()='Lead Information']"));
 		firstName.sendKeys(FirstName);
 		lastName.sendKeys(LastName);
 		company.sendKeys(Company);
 		title.sendKeys(Title);
-		Thread.sleep(7000);
+		baseclass.staticWait(7);
 		saveBtn.click();
 
 	}

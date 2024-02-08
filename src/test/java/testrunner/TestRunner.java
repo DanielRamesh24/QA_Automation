@@ -13,8 +13,8 @@ import io.cucumber.junit.CucumberOptions;
 		plugin = {"pretty",
 				"html:target/HtmlReports",
 				"json:target/JSONReports/report.json", 
-				"junit:target/JUnitReports/report.xml"}
-		
+				"junit:target/JUnitReports/report.xml"},
+		dryRun=false
 		)
 
 

@@ -26,7 +26,7 @@ public class CampaignSteps extends BrowserInvoke {
 	}
 
 	@When("Campaign creation")
-	public void campaign_creation() throws InterruptedException {
+	public void campaign_creation() throws Exception {
 		baseclass.presenceOfElement(driver, By.xpath("//span[text()='Recently Viewed']"));
 
 		campaignPage.createcampaign();

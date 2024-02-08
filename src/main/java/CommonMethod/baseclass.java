@@ -2,8 +2,6 @@ package CommonMethod;
 
 import java.io.IOException;
 import java.time.Duration;
-import java.util.concurrent.TimeUnit;
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
@@ -26,10 +24,7 @@ public class baseclass {
 		a.click();
 	}
 
-	public static void implicitWait(int w) {
-		driver.manage().timeouts().implicitlyWait(w, TimeUnit.SECONDS);
-	}
-
+	
 	public static void quitBrowser() {
 		driver.quit();
 	}
@@ -39,19 +34,26 @@ public class baseclass {
 	}
 
 	public void navigate_to_Objects(String objectName) throws InterruptedException, IOException {
-
-		Thread.sleep(5000);
-		
+		presenceOfElement(driver, By.xpath("//div[@style='background-image: url(/img/salesforce-noname-logo-v2.svg?width=128&height=128)']"));
 		cp.Applauncher.click();
-		Thread.sleep(2000);
 		presenceOfElement(driver, By.xpath("//h3[text()='Apps']"));
 		cp.Search.sendKeys(objectName);
-		Thread.sleep(5000);
-
+		staticWait(5);
+	}
+	public static void performClick(WebElement b) {
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("arguments[0].click()", b);
+	}
+	public static void passvalues(WebElement a, String object) {
+		a.sendKeys(object);
+	}
+	
+	public static void clickable(WebElement click) {
+		click.click();
 	}
 
-	public static void staticWait() {
-		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(50));
+	public static void staticWait(int seconds) {
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(seconds));
 	}
 
 	public static WebElement presenceOfElement(WebDriver driver, By by) {
