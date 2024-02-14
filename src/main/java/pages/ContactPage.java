@@ -11,7 +11,6 @@ import abstractclass.DriverClass;
 
 public class ContactPage extends DriverClass {
 	
-	baseclass obj1 = new baseclass();
 		
 	public ContactPage(WebDriver driver) {
 		super(driver);
@@ -83,9 +82,9 @@ public class ContactPage extends DriverClass {
 	
 	public void filldata(String a,String b,String c) {
 		
-		obj1.fillTextbox(fstName, a);
-		obj1.fillTextbox(lstName, b);
-		obj1.fillTextbox(accName, c);
+		baseclass.fillTextbox(fstName, a);
+		baseclass.fillTextbox(lstName, b);
+		baseclass.fillTextbox(accName, c);
 				
 	}
 	

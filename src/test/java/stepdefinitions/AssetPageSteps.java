@@ -2,7 +2,7 @@ package stepdefinitions;
 
 
 import org.apache.log4j.Logger;
-import org.openqa.selenium.Keys;
+import org.openqa.selenium.JavascriptExecutor;
 import browserfactory.BrowserInvoke;
 import pages.AssetPage;
 import utils.Test_Data;
@@ -40,23 +40,36 @@ public class AssetPageSteps extends BrowserInvoke {
 		Thread.sleep(3000);
 		ap2.AssetName.sendKeys(Test_Data.Datasheet("Asset", 1, 0));
 		Thread.sleep(3000);
-		ap2.AccountClick.sendKeys(Test_Data.Datasheet("Asset", 1, 1));
+		/*
+		 * ap2.AccountClick.sendKeys(Test_Data.Datasheet("Asset", 1, 1));
+		 * Thread.sleep(5000); ap2.selectAccount.click();
+		 */
+		/*
+		 * ap2.AccountClick.sendKeys(Keys.ARROW_DOWN);
+		 * ap2.AccountClick.sendKeys(Keys.ARROW_DOWN);
+		 * ap2.AccountClick.sendKeys(Keys.ARROW_DOWN);
+		 */
 		Thread.sleep(3000);
-		ap2.AccountClick.sendKeys(Keys.ARROW_DOWN);
-		ap2.AccountClick.sendKeys(Keys.ARROW_DOWN);
-		Thread.sleep(3000);
-		ap2.AccountClick.sendKeys(Keys.ENTER);
+		//ap2.AccountClick.sendKeys(Keys.ENTER);
 		Thread.sleep(3000);
 		ap2.ContactClick.sendKeys(Test_Data.Datasheet("Asset", 1, 2));
-		Thread.sleep(3000);
-		ap2.ContactClick.sendKeys(Keys.ARROW_DOWN);
-		ap2.ContactClick.sendKeys(Keys.ARROW_DOWN);
-		Thread.sleep(3000);
-		ap2.ContactClick.sendKeys(Keys.ENTER);
-		Thread.sleep(3000);
+		Thread.sleep(5000);
+		/*
+		 * JavascriptExecutor js = (JavascriptExecutor) driver; js.
+		 * executeScript("arguments[0].setAttribute('style', 'background: yellow; border: 2px solid red;');"
+		 * , ap2.selectContact);
+		 */
+		ap2.selectContact.click();
+		/*
+		 * ap2.ContactClick.sendKeys(Keys.ARROW_DOWN);
+		 * ap2.ContactClick.sendKeys(Keys.ARROW_DOWN);
+		 */
+		//Thread.sleep(3000);
+		//ap2.ContactClick.sendKeys(Keys.ENTER);
+		//Thread.sleep(3000);
 		ap2.saveBtn.click();
 		Thread.sleep(3000);
-		log.info("User007 enters valid data for creating new order record");
+		log.info("User007 enters valid data for creating new asset record");
 
 	}
 
