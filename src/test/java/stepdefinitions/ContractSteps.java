@@ -48,7 +48,7 @@ public class ContractSteps extends BrowserInvoke {
 		Thread.sleep(3000);
 		contractPage.AccountName.click();
 		contractPage.Acconutlookup.click();
-		contractPage.ContractTerm.sendKeys("1");
+		contractPage.ContractTerm.sendKeys(Test_Data.Datasheet("Contract", 1, 1));
 		Thread.sleep(3000);
 		contractPage.ContractStartDatepicker.click();
 		contractPage.ContractStartDate.click();

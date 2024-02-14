@@ -19,22 +19,22 @@ public class AccountSteps extends BrowserInvoke {
 	public static AccountPage acc = new AccountPage(driver);
 	public static BrowserInvoke browser = new BrowserInvoke();
 	public static baseclass bc = new baseclass();
-	
+
 	@Given("Click App launcher and search Accounts and Choose accounts")
 	public void click_app_launcher_and_search_accounts_and_choose_accounts() throws InterruptedException, IOException {
-	    
-	    staticWait(10);
+
+		staticWait(10);
 		// acc = new Account();
 		Thread.sleep(5000);
 		bc.navigate_to_Objects("Accounts");
 		acc.getClickaccount().click();
 	}
 
-
-	@And("Click New button")
-	public void click_Account_tab_and_click_New_button() {
+	@And("Click Account New button")
+	public void click_Account_tab_and_click_Account_New_button() {
 		baseclass.presenceOfElement(driver, By.xpath(
 				"//img[@src='https://mastek-dev-ed.develop.my.salesforce.com/img/icon/t4v35/standard/account_120.png']"));
+		driver.navigate().refresh();
 		performClick(acc.getNewbutton());
 	}
 
@@ -50,10 +50,16 @@ public class AccountSteps extends BrowserInvoke {
 
 		passvalues(acc.getAccountsite(), Test_Data.Datasheet("Account", 1, 2));
 
+		staticWait(5);
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		js.executeScript("arguments[0].scrollIntoView();", acc.getType());
-		js.executeScript("arguments[0].setAttribute('style', 'background: yellow; border: 2px solid red;');",
-				acc.getType());
+
+		/*
+		 * js.
+		 * executeScript("arguments[0].setAttribute('style', 'background: yellow; border: 2px solid red;');"
+		 * , acc.getType());
+		 */
+
 		performClick(acc.getType());
 		Thread.sleep(1000);
 		String a = "//span[text()='";

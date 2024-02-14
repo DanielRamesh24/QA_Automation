@@ -14,7 +14,7 @@ public class OrderSteps extends BrowserInvoke {
 	Logger log = LoggerHelper.getLogger(LoggerHelper.class);
 	OrderPage orderrecordcreationpage = new OrderPage(driver);
 
-	BrowserInvoke browser = new BrowserInvoke();
+	//BrowserInvoke browser = new BrowserInvoke();
 
 	@When("User009 navigates to order object")
 	public void user009_navigates_to_order_object() throws InterruptedException, NullPointerException {
@@ -39,6 +39,8 @@ public class OrderSteps extends BrowserInvoke {
 	public void user009_clicks_on_save_button() throws InterruptedException {
 		orderrecordcreationpage.clickingSavebutton();
 		log.info("User009 clicked on save button");
+		driver.quit();
+		log.info("current browser is closed");
 	}
 
 	@And("Verifies009 the New record created {string} & {string}")
@@ -46,6 +48,7 @@ public class OrderSteps extends BrowserInvoke {
 			throws InterruptedException, Exception {
 		orderrecordcreationpage.verifyCreatedRecord(sheetname, TCID);
 		log.info("Verifies009 the New record created with entered valid data");
+				
 	}
 
 }

@@ -2,30 +2,47 @@ package utils;
 
 import java.io.File;
 import java.io.FileInputStream;
-import java.util.Date;
-
-import org.apache.poi.ss.usermodel.Cell;
-import org.apache.poi.ss.usermodel.Row;
-import org.apache.poi.ss.usermodel.Sheet;
-import org.apache.poi.ss.usermodel.Workbook;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
-import org.apache.poi.ss.usermodel.CellType;
 import org.apache.poi.xssf.usermodel.XSSFCell;
 import org.apache.poi.xssf.usermodel.XSSFRow;
-import org.apache.poi.ss.usermodel.DataFormatter;
-import org.apache.poi.ss.usermodel.DateUtil;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import constants.Constants;
 
 public class Test_Data {
 
 	public static String Datasheet(String sheetname, int rows, int columns) throws Exception{
+		Object result = new Object();
 		File location = new File(Constants.datafilepath);
 		FileInputStream fin = new FileInputStream(location);
 		XSSFWorkbook workbook = new XSSFWorkbook(fin);
 		XSSFSheet sheet = workbook.getSheet(sheetname);
 		XSSFRow row1 = sheet.getRow(rows);
 		XSSFCell cell2 = row1.getCell(columns);
+		//String value=cell2.getCellValue();
+		
+		System.out.println(cell2);
+		if (cell2 != null) {
+			switch (cell2.getCellType()) { // to get different types of cell values
+			case NUMERIC:// numeric value in excel
+				result = cell2.getNumericCellValue();
+				break;
+
+			case STRING: // string value in excel
+				result = cell2.getStringCellValue();
+				break;
+
+			case BOOLEAN: // boolean value in excel
+				result = cell2.getBooleanCellValue();
+				break;
+			
+			
+			case BLANK: // blank value in excel
+				result = cell2.getStringCellValue();
+				break;
+			default:
+				break;
+			}
+		
 		//CellType ctype = cell2.getCellType();
 		/*System.out.println("ctype" + ctype);
 		if (ctype = "STRING") {
@@ -42,9 +59,11 @@ public class Test_Data {
 		}
 	}*/
 		
-		String value=cell2.getStringCellValue();
-		return value;
+		/*String value=cell2.getStringCellValue();
+		return value;*/
 }
+		return result.toString();
+	}
 }
 
     

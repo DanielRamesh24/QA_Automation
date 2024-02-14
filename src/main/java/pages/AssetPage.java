@@ -17,8 +17,7 @@ public class AssetPage extends DriverClass{
 		// TODO Auto-generated constructor stub
 	}
 	
-	public static baseclass bc = new baseclass();
-
+	
 	@FindBy(how = How.XPATH, using = "//div[@class='slds-icon-waffle']") 
 	public WebElement Applauncher;
 	
@@ -37,6 +36,12 @@ public class AssetPage extends DriverClass{
 	@FindBy (how = How.XPATH, using="//input[@placeholder='Search Accounts...']")
 	public WebElement AccountClick;
 	
+	@FindBy (how = How.XPATH, using="(//li[@class='slds-listbox__item'])[2]")
+	public WebElement selectAccount;
+	
+	@FindBy (how = How.XPATH, using="(//*[//input[@placeholder='Search Contacts...']]//following::li[@class='slds-listbox__item'])[1]")
+	public WebElement selectContact;
+		
 	@FindBy (how = How.XPATH, using="//input[@placeholder='Search Contacts...']")
 	public WebElement ContactClick;
 	
@@ -52,7 +57,7 @@ public class AssetPage extends DriverClass{
 	public void navigate_to_assetObj() throws InterruptedException {
 		Thread.sleep(10000);
 		Applauncher.click();
-		bc.presenceOfElement(driver, By.xpath("//h3[text()='Apps']"));
+		baseclass.presenceOfElement(driver, By.xpath("//h3[text()='Apps']"));
 		Search.sendKeys("Asset");
 		Thread.sleep(5000);
 		Asset.click();

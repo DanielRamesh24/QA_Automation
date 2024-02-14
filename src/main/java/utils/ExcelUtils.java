@@ -74,6 +74,8 @@ public class ExcelUtils {
 							case BLANK: // blank value in excel
 								result = cell.getStringCellValue();
 								break;
+							default:
+								break;
 							}
 							
 						}

@@ -34,7 +34,7 @@ public class AccountPage extends DriverClass {
 	@FindBy(xpath = "//input[@name='Site']")
 	private WebElement Accountsite;
 
-	@FindBy(xpath = "//button[@aria-label='Type, --None--']")
+	@FindBy(xpath = "(//button/span[text()='--None--'])[2]")
 	private WebElement Type;
 
 	@FindBy(xpath = "(//button/span[text()='--None--'])[3]")
