@@ -70,6 +70,9 @@ public class AssetPageSteps extends BrowserInvoke {
 		ap2.saveBtn.click();
 		Thread.sleep(3000);
 		log.info("User007 enters valid data for creating new asset record");
+		
+		driver.quit();
+		log.info("current browser is closed");
 
 	}
 

@@ -1,6 +1,7 @@
 package stepdefinitions;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 
 import CommonMethod.baseclass;
 
@@ -60,12 +61,19 @@ public class OpportunitySteps extends BrowserInvoke {
 
 		// date
 		passvalues(OpportunityPage.getclosedate(),"2/7/2023");
-		Thread.sleep(2000);
-
+		Thread.sleep(5000);
+ 
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("arguments[0].scrollIntoView();",OpportunityPage.getstage());
+		
+		
+		js. executeScript("arguments[0].setAttribute('style', 'background: yellow; border: 2px solid red;');"
+		  , OpportunityPage.getstage());
+		
 		// stage
 		clickable(OpportunityPage.getstage());
         Thread.sleep(2000);
-
+        
 		String x = "//span[@title='";
 		String excelstage = Test_Data.Datasheet("Opportunity", 1, 1);		
 		String z = "']";

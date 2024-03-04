@@ -2,9 +2,13 @@ package stepdefinitions;
 
 import java.io.IOException;
 
+
+
 import org.apache.log4j.Logger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
+
+
 import CommonMethod.baseclass;
 import browserfactory.BrowserInvoke;
 import pages.ContractPage;
@@ -61,32 +65,54 @@ public class ContractSteps extends BrowserInvoke {
 	public void verifies_the_new_record_created() throws Exception {
 		Thread.sleep(5000);
 		contractPage.Details.click();
+		presenceOfElement(driver, By.xpath("//span[text()='Contract Owner']"));
+		Thread.sleep(5000);
+		elementYellowHighlight(contractPage.ContractNumber);
+		Thread.sleep(5000);
 		String AccName;
 		Thread.sleep(2000);
 		AccName = contractPage.VerifyAccountName.getText();
 		if (AccName.equalsIgnoreCase(Test_Data.Datasheet("Contract", 1, 0))) {
+			elementLgreenHighlight(contractPage.ContractNumber);
 			log.info("Verification & Validation is successful !!!");
 		} else
 			log.info("Verification & Validation is Failed ");
 	}
-
-	@When("update ContractTerm field")
+	
+	
+	@And("update ContractTerm field")
 	public void update_ContractTerm_field() throws Exception {
 		String ContractNumber;
+		Thread.sleep(5000);
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("arguments[0].scrollIntoView();", contractPage.ContractTermfield);
+		//presenceOfElement(driver, By.xpath("//span[text()='Contract Owner']"));
+		Thread.sleep(5000);
+		elementYellowHighlight(contractPage.ContractTermfield);
 		Thread.sleep(5000);
 		contractPage.dropDownbtn.click();
 		Thread.sleep(5000);
 		contractPage.editbton.click();
 		contractPage.ContractTerm.clear();
-		contractPage.ContractTerm.sendKeys("2");
+		contractPage.ContractTerm.sendKeys(Test_Data.Datasheet("Contract", 1, 2));
 		contractPage.saveBtn.click();
-		ContractNumber = contractPage.ContractTerm.getText();
-		System.out.println(ContractNumber);
-		if (ContractNumber == "2") {
+		Thread.sleep(5000);
+		elementLgreenHighlight(contractPage.ContractTermfield);
+		ContractNumber = contractPage.ContractTermfield.getText();
+		//AccName = contractPage.VerifyAccountName.getText();
+		Thread.sleep(5000);
+		if (ContractNumber == Test_Data.Datasheet("Contract", 1, 2)) {
+			//elementLgreenHighlight(contractPage.ViewContractterm);
+			elementLgreenHighlight(contractPage.ContractTermfield);
 			log.info("Verification & Validation for updation is successful !!!");
 		} else
 			log.info("Verification & Validation for updation is Failed ");
+		
+		
+		
 	}
+	
+
 
 	@When("Delete the Record")
 	public void delete_the_record() throws Exception {

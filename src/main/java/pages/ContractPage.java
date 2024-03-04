@@ -33,7 +33,18 @@ public class ContractPage extends DriverClass {
 
 	@FindBy(how = How.XPATH, using = "//input[@name='ContractTerm']")
 	public WebElement ContractTerm;
-
+	
+	@FindBy(how = How.XPATH, using = "//lightning-formatted-number[@data-output-element-id=\"output-field\"]")
+	public WebElement ContractTermfield;
+	
+	
+	@FindBy(how = How.XPATH, using = "(//span[@class='test-id__field-value slds-form-element__static slds-grow word-break-ie11'])[5]")
+	public WebElement ViewContractterm;
+	
+	@FindBy(how = How.XPATH, using = "//button[@title='Clear Selection']")
+	public WebElement ClearselectionName;
+	
+	
 	@FindBy(how = How.XPATH, using = "//input[@name='StartDate']")
 	public WebElement ContractStartDatepicker;
 
@@ -45,6 +56,9 @@ public class ContractPage extends DriverClass {
 
 	@FindBy(how = How.XPATH, using = "(//lightning-base-combobox-formatted-text[@title='TestDaniel'])[1]")
 	public WebElement Acconutlookup;
+	
+	@FindBy(how = How.XPATH, using = "(//lightning-base-combobox-formatted-text[@title='Kevin Testing'])[1]")
+	public WebElement Acconutlookup1;
 
 	@FindBy(how = How.XPATH, using = "//a[text()='Details']")
 	public WebElement Details;
@@ -67,14 +81,19 @@ public class ContractPage extends DriverClass {
 	@FindBy(how = How.XPATH, using = "//button[@class='slds-button slds-button_icon-border-filled']")
 	public WebElement dropDownbtn;
 
-	@FindBy(how = How.XPATH, using = "(//a[@name='Edit'])[1]")
+	@FindBy(how = How.XPATH, using = "//lightning-menu-item[@data-target-selection-name=\"sfdc:StandardButton.Contract.Edit\"]")
 	public WebElement editbton;
 
-	@FindBy(how = How.XPATH, using = "//a[@name='Delete']")
+	@FindBy(how = How.XPATH, using = "//lightning-menu-item[@data-target-selection-name=\"sfdc:StandardButton.Contract.Delete\"]")
 	public WebElement delbtn;
 
 	@FindBy(how = How.XPATH, using = "//button[@title='Delete']")
 	public WebElement delConfirm;
+	
+	
+	@FindBy(how = How.XPATH, using = "(//lightning-formatted-text[@data-output-element-id='output-field'])[2]")
+	public WebElement ContractNumber;
+	
 
 	public void AppLauncher() throws InterruptedException {
 		Thread.sleep(10000);

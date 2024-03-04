@@ -6,6 +6,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
 
+
 import utils.SeleniumUtils;
 import utils.Test_Data;
 import abstractclass.DriverClass;
@@ -48,8 +49,9 @@ public class OrderPage extends DriverClass {
 	@FindBy(how = How.XPATH, using = "(//lightning-base-combobox-formatted-text[@title='Kevin Testing'])[1]")
 	public WebElement Acconutlookup;
 
-	@FindBy(how = How.XPATH, using = "//a[text()='Details']")
+	@FindBy(how = How.XPATH, using = "(//a[@data-label=\"Details\"])[2]")
 	public WebElement Details;
+	
 
 	@FindBy(how = How.XPATH, using = "(//span[text()='Kevin Testing'])[2]")
 	public WebElement VerifyAccountName;
@@ -63,6 +65,76 @@ public class OrderPage extends DriverClass {
 	@FindBy(how = How.XPATH, using = "//button[@name='SaveEdit']")
 	// button[text()='Save']
 	public WebElement Savebutton;
+	
+	@FindBy(how = How.XPATH, using = "(//button[@name='SaveEdit'])")
+	public WebElement saveBtn;
+	
+	@FindBy(how = How.XPATH, using = "//button[@class='slds-button slds-button_icon-border-filled'][@part='button button-icon']")
+	public WebElement dropDownbtn;
+	
+
+	
+	@FindBy(how = How.XPATH, using = "//lightning-button-menu[@class='menu-button-item slds-dropdown-trigger slds-dropdown-trigger_click']//button")
+	public WebElement dropDownb;
+	
+	
+	@FindBy(how = How.XPATH, using = "//span[@class='test-id__field-label'][text()= 'Status']")
+	public WebElement statusheading;
+	
+	
+	@FindBy(how = How.XPATH, using = "//lightning-menu-item[@data-target-selection-name=\"sfdc:StandardButton.Order.Edit\"]")
+	public WebElement editbton;
+	
+	@FindBy(how = How.XPATH, using = "//button[@data-value='Draft']")
+	public WebElement Statuspicklist;
+	
+	@FindBy(how = How.XPATH, using = "//span[@title='Activated']")
+	public WebElement Activatepicklistvalue;
+	
+	@FindBy(how = How.XPATH, using = "//lightning-base-combobox-item[@data-value='Activated']")
+	public WebElement ActivatedPicklistvalue;
+	
+	
+	@FindBy(how = How.XPATH, using = "//lightning-base-combobox-item[@data-value='Draft']")
+	public WebElement DraftPicklistvalue;
+	
+	
+	@FindBy(how = How.XPATH, using = "//runtime_platform_actions-action-renderer[@title='Delete']")
+	public WebElement delbtn;
+
+	@FindBy(how = How.XPATH, using = "//button[@title='Delete']")
+	public WebElement delConfirm;
+	
+	@FindBy(how = How.XPATH, using = "(//lightning-formatted-text[@data-output-element-id='output-field'])[12]")
+	public WebElement Ordernumber;
+	
+	@FindBy(how = How.XPATH, using = "(//force-lookup[@data-output-element-id='output-field'])[1]")
+	public WebElement contractNumber;
+	
+
+	@FindBy(how = How.XPATH, using = "//button[@title='Edit Shipping Address']")
+	public WebElement EditbtnShippingAddress;
+	
+	@FindBy(how = How.XPATH, using = "//button[@title='Edit Status']")
+	public WebElement EditBtnstatus;
+	
+
+	@FindBy(how = How.XPATH, using = "//button[@Id='combobox-button-676']")
+	public WebElement Draft;
+	
+	@FindBy(how = How.XPATH, using = "(//textarea[@name='street'])[1]")
+	public WebElement Street;
+	
+	@FindBy(how = How.XPATH, using = "(//lightning-formatted-text[@data-output-element-id=\"output-field\"])[26]")
+	public WebElement ordernumber;
+	
+	@FindBy(how = How.XPATH, using = "(//lightning-formatted-address[@data-output-element-id=\"output-field\"])[1]")
+	public WebElement VerifyShippingfield;
+	
+	
+	
+	
+	
 
 	public void navigateOrder() throws InterruptedException {
 		Thread.sleep(10000);
@@ -111,6 +183,7 @@ public class OrderPage extends DriverClass {
 		String actualAccountName = VerifyAccountName.getText();
 		if (expectedAccountName.equals(actualAccountName)) {
 			SeleniumUtils.matchingHighlights(driver, VerifyAccountName);
+			//baseclass.elementLgreenHighlight(VerifyAccountName);
 			Thread.sleep(5000);
 		} else {
 			SeleniumUtils.mismatchingHighlights(driver, VerifyAccountName);

@@ -68,4 +68,16 @@ public class baseclass {
 		js.executeScript("arguments[0].click()", ele);
 	}
 
+	
+	public static void elementYellowHighlight(WebElement c) {
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("arguments[0].setAttribute('style', 'background: yellow; border: 2px solid red;');", c);
+ 
+	}
+	
+	public static void elementLgreenHighlight(WebElement c) {
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("arguments[0].style.background='LightGreen'",c);
+ 
+	}
 }
