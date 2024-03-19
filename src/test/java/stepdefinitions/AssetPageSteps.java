@@ -2,7 +2,6 @@ package stepdefinitions;
 
 
 import org.apache.log4j.Logger;
-import org.openqa.selenium.JavascriptExecutor;
 import browserfactory.BrowserInvoke;
 import pages.AssetPage;
 import utils.Test_Data;
@@ -22,7 +21,6 @@ public class AssetPageSteps extends BrowserInvoke {
 		AssetPage ap = new AssetPage(driver);
 		System.out.println(driver);
 		ap.navigate_to_assetObj();
-
 		log.info("User007 navigated to Asset");
 	}
 
@@ -40,88 +38,67 @@ public class AssetPageSteps extends BrowserInvoke {
 		Thread.sleep(3000);
 		ap2.AssetName.sendKeys(Test_Data.Datasheet("Asset", 1, 0));
 		Thread.sleep(3000);
-		/*
-		 * ap2.AccountClick.sendKeys(Test_Data.Datasheet("Asset", 1, 1));
-		 * Thread.sleep(5000); ap2.selectAccount.click();
-		 */
-		/*
-		 * ap2.AccountClick.sendKeys(Keys.ARROW_DOWN);
-		 * ap2.AccountClick.sendKeys(Keys.ARROW_DOWN);
-		 * ap2.AccountClick.sendKeys(Keys.ARROW_DOWN);
-		 */
+		ap2.AccountClick.sendKeys(Test_Data.Datasheet("Asset", 1, 1));
 		Thread.sleep(3000);
-		//ap2.AccountClick.sendKeys(Keys.ENTER);
-		Thread.sleep(3000);
+		ap2.selectAccount.click();
 		ap2.ContactClick.sendKeys(Test_Data.Datasheet("Asset", 1, 2));
 		Thread.sleep(5000);
-		/*
-		 * JavascriptExecutor js = (JavascriptExecutor) driver; js.
-		 * executeScript("arguments[0].setAttribute('style', 'background: yellow; border: 2px solid red;');"
-		 * , ap2.selectContact);
-		 */
 		ap2.selectContact.click();
-		/*
-		 * ap2.ContactClick.sendKeys(Keys.ARROW_DOWN);
-		 * ap2.ContactClick.sendKeys(Keys.ARROW_DOWN);
-		 */
-		//Thread.sleep(3000);
-		//ap2.ContactClick.sendKeys(Keys.ENTER);
-		//Thread.sleep(3000);
 		ap2.saveBtn.click();
 		Thread.sleep(3000);
 		log.info("User007 enters valid data for creating new asset record");
-		
-		driver.quit();
-		log.info("current browser is closed");
 
 	}
 
 
-//	@When("Verifies the New record created")
-//	public void verifies_the_new_record_created() throws Exception {
-//		ContractPage cp3 = new ContractPage(driver);
-//		Thread.sleep(5000);
-//		cp3.Details.click();
-//		String AccName ; 
-//		Thread.sleep(2000);
-//		AccName = cp3.VerifyAccountName.getText();
-//		if(AccName.equalsIgnoreCase(Test_Date.Datasheet("Contract", 1, 0))) {
-//			log.info("Verification & Validation is successful !!!"); 
-//		}
-//		else
-//			log.info("Verification & Validation is Failed "); 
-//	}
-//
-//	@When("update ContractTerm field")
-//	public void update_ContractTerm_field()throws Exception {
-//		ContractPage Contractrecordcreationpage = new ContractPage(driver);
-//		String ContractNumber;
-//		Thread.sleep(5000);
-//		Contractrecordcreationpage.dropDownbtn.click();
-//		Thread.sleep(5000);
-//		Contractrecordcreationpage.editbton.click(); 
-//		Contractrecordcreationpage.ContractTerm.clear();
-//		Contractrecordcreationpage.ContractTerm.sendKeys("2");
-//		Contractrecordcreationpage.saveBtn.click();
-//		ContractNumber = Contractrecordcreationpage.ContractTerm.getText();
-//		System.out.println(ContractNumber);
-//		if(ContractNumber == "2") {
-//			log.info("Verification & Validation for updation is successful !!!"); 
-//		}
-//		else
-//			log.info("Verification & Validation for updation is Failed "); 
-//	}
-//
-//
-//	@When("Delete the Record")
-//	public void delete_the_record() throws Exception{
-//		ContractPage cp5 = new ContractPage(driver);
-//		Thread.sleep(2000);
-//		cp5.dropDownbtn.click();
-//		Thread.sleep(2000);
-//		cp5.delbtn.click();
-//		Thread.sleep(2000);
-//		cp5.delConfirm.click();
-//	}
+	@And("User007 Verifies the New record created")
+	public void verifies_the_new_record_created() throws Exception {
+		AssetPage cp3 = new AssetPage(driver);
+		Thread.sleep(5000);
+		cp3.Details.click();
+		String AssetName;
+		Thread.sleep(2000);
+		AssetName = cp3.VerifyAssetName.getText();
+		System.out.println(AssetName);
+		if(AssetName.equalsIgnoreCase(Test_Data.Datasheet("Asset", 1, 0))) {
+			log.info("Verification & Validation is successful !!!"); 
+		}
+		else
+			log.info("Verification & Validation is Failed "); 
+	}
+
+	@And("User007 update AssetName field")
+	public void User007_update_AssetName_field()throws Exception {
+		String AssetName;
+		elementYellowHighlight(assetPage.VerifyAssetName);
+		Thread.sleep(5000);
+		assetPage.PencilIcon.click();
+		Thread.sleep(5000);
+		assetPage.AssetName.clear();
+		assetPage.AssetName.sendKeys(Test_Data.Datasheet("Asset", 1, 3));
+		assetPage.saveBtn.click();
+		Thread.sleep(7000);
+		elementLgreenHighlight(assetPage.VerifyAssetName);
+		AssetName = assetPage.VerifyAssetName.getText();
+		System.out.println("AssetName is"+AssetName);
+		Thread.sleep(7000);
+		if (AssetName == Test_Data.Datasheet("Asset", 1, 3)) {
+			elementLgreenHighlight(assetPage.VerifyAssetName);
+			log.info("Verification & Validation for updation is successful !!!");
+		} else
+			log.info("Verification & Validation for updation is Failed ");
+	}
+
+
+	@And("User007 Delete the Record")
+	public void delete_the_record() throws Exception{
+		AssetPage cp5 = new AssetPage(driver);
+		Thread.sleep(2000);
+		cp5.dropDownbtn.click();
+		Thread.sleep(2000);
+		cp5.delbtn.click();
+		Thread.sleep(2000);
+		cp5.delConfirm.click();
+	}
 }
 

@@ -1,9 +1,16 @@
-2023-12-27 18:12:151 INFO  LoggerHelper:58 - user clicked login button
-2023-12-27 18:12:633 INFO  LoggerHelper:23 - user009 navigated to Orders
-2023-12-27 18:12:850 INFO  LoggerHelper:29 - user009 clicked on new button
-2023-12-27 18:12:98 INFO  LoggerHelper:35 - user009 enters valid data for creating new order record
-2023-12-27 18:12:230 INFO  LoggerHelper:41 - User009 clicked on save button
-2023-12-27 18:12:928 INFO  LoggerHelper:33 - user navigated to Contract
-2023-12-27 18:12:99 INFO  LoggerHelper:41 - user clicked on new button
-2023-12-27 18:12:179 INFO  LoggerHelper:56 - user enters valid data for creating new order record
-2023-12-27 18:12:416 INFO  LoggerHelper:68 - Verification & Validation is successful !!!
+2024-03-06 15:03:259 INFO  LoggerHelper:36 - user clicked login button
+2024-03-06 15:03:294 INFO  LoggerHelper:25 - user009 navigated to Orders
+2024-03-06 15:03:519 INFO  LoggerHelper:31 - user009 clicked on new button
+2024-03-06 15:03:209 INFO  LoggerHelper:37 - user009 enters valid data for creating new order record
+2024-03-06 15:03:399 INFO  LoggerHelper:43 - User009 clicked on save button
+2024-03-06 15:03:640 INFO  LoggerHelper:79 - Verification & Validation for updation is Failed 
+2024-03-06 15:03:154 INFO  LoggerHelper:37 - user navigated to Contract
+2024-03-06 15:03:353 INFO  LoggerHelper:45 - user clicked on new button
+2024-03-06 15:03:828 INFO  LoggerHelper:60 - user enters valid data for creating new order record
+2024-03-06 15:03:939 INFO  LoggerHelper:77 - Verification & Validation is successful !!!
+2024-03-06 15:03:103 INFO  LoggerHelper:109 - Verification & Validation for updation is Failed 
+2024-03-06 15:03:695 INFO  LoggerHelper:24 - User007 navigated to Asset
+2024-03-06 15:03:927 INFO  LoggerHelper:32 - User007 clicked on new button
+2024-03-06 15:03:815 INFO  LoggerHelper:49 - User007 enters valid data for creating new asset record
+2024-03-06 15:03:114 INFO  LoggerHelper:64 - Verification & Validation is successful !!!
+2024-03-06 15:03:87 INFO  LoggerHelper:89 - Verification & Validation for updation is Failed 

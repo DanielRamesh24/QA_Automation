@@ -36,7 +36,7 @@ public class AssetPage extends DriverClass{
 	@FindBy (how = How.XPATH, using="//input[@placeholder='Search Accounts...']")
 	public WebElement AccountClick;
 	
-	@FindBy (how = How.XPATH, using="(//li[@class='slds-listbox__item'])[2]")
+	@FindBy (how = How.XPATH, using="(//li[@class='slds-listbox__item'])[1]")
 	public WebElement selectAccount;
 	
 	@FindBy (how = How.XPATH, using="(//*[//input[@placeholder='Search Contacts...']]//following::li[@class='slds-listbox__item'])[1]")
@@ -47,6 +47,28 @@ public class AssetPage extends DriverClass{
 	
     @FindBy (how = How.XPATH, using="(//button[@name='SaveEdit'])")
     public WebElement saveBtn;
+    
+    @FindBy (how = How.XPATH, using="//a[@data-label='Details']")
+    public WebElement Details;
+    
+    @FindBy (how = How.XPATH, using="//*[@title='Edit Asset Name']")
+    public WebElement PencilIcon;
+    
+    @FindBy (how = How.XPATH, using="(//lightning-formatted-text[@data-output-element-id='output-field'])[1]")
+    public WebElement VerifyAssetName;
+    
+	@FindBy(how = How.XPATH, using = "//button[@class='slds-button slds-button_icon-border-filled']")
+	public WebElement dropDownbtn;
+
+	@FindBy(how = How.XPATH, using = "//lightning-menu-item[@data-target-selection-name=\"sfdc:StandardButton.Asset.Edit\"]")
+	public WebElement editbton;
+
+	@FindBy(how = How.XPATH, using = "//lightning-menu-item[@data-target-selection-name=\"sfdc:StandardButton.Asset.Delete\"]")
+	public WebElement delbtn;
+
+	@FindBy(how = How.XPATH, using = "//button[@title='Delete']")
+	public WebElement delConfirm;
+    
 
 
 	public void AppLauncher() throws InterruptedException {

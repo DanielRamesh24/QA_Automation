@@ -32,7 +32,7 @@ public class ContactPage extends DriverClass {
 	@FindBy(xpath = "//input[@role='combobox']")
 	private WebElement accName;
 	
-	@FindBy(xpath = "//lightning-base-combobox-formatted-text[@title='Vignesh Testing']")
+	@FindBy(xpath = "//lightning-base-combobox-formatted-text[@title='Test Asset Account']")
 	private WebElement selAccount;
 	
 	@FindBy(xpath = "//input[@name='Title']")
