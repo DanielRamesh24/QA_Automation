@@ -45,15 +45,21 @@ public class LeadSteps extends BrowserInvoke {
 		leadPage.LeadCreatedata(fName, lName, cmpny, title);
 	}
 
+	
+	@Then("Updating the existing record")
+	public void updating_the_existing_record(DataTable LeadUpdate) throws InterruptedException {
+		List<List<String>> dataset1 = LeadUpdate.asLists();
+String lastName = dataset1.get(1).get(0);
+String cmpny = dataset1.get(1).get(1);
+
+		leadPage.leadupdation(lastName, cmpny);
+
+	}
+
 	@And("User Delete the Record")
 	public void user_delete_the_record() throws Exception {
-		Thread.sleep(5000);
-		contractPage.dropDownbtn.click();
-		Thread.sleep(5000);
-		leadPage.Leaddelbtn.click();
-		Thread.sleep(2000);
-		contractPage.delConfirm.click();
-		Thread.sleep(2000);
-	}
+		Thread.sleep(10000);
+		leadPage.leaddeletion();
+		}
 
 }
