@@ -6,6 +6,7 @@ import org.openqa.selenium.JavascriptExecutor;
 import CommonMethod.baseclass;
 
 import browserfactory.BrowserInvoke;
+import cucumber.api.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -88,4 +89,25 @@ public class OpportunitySteps extends BrowserInvoke {
 		System.out.println("Opportunity record created");
 
 	}
+	
+	@Then("move to detail section and edit opp name")
+	public void move_to_detail_section_and_edit_opp_name() throws InterruptedException {
+		Thread.sleep(5000);
+		clickable(OpportunityPage.getdetailsection());
+		clickable(OpportunityPage.getpencilicon());
+		passvalues(OpportunityPage.getupdateoppname(), " Updated");
+		Thread.sleep(2000);
+
+	}
+
+	@Then("click save")
+	public void click_save() throws InterruptedException {
+		Thread.sleep(5000);
+		clickable(OpportunityPage.getsavebtn1());
+		Thread.sleep(5000);
+		System.out.println("Opportunity record Updated");
+		elementYellowHighlight(OpportunityPage.getUpdatehighlight());
+
+	}
+	
 }

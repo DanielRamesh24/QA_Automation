@@ -77,4 +77,63 @@ public class QuotePage extends DriverClass {
 		return Quotesave;
 	}
 
+	//Update Quote
+	
+		@FindBy(xpath = "//a[@title='My Quote']")
+		private WebElement Quoteobject;
+	 
+		public WebElement getQuoteobject() {
+			return Quoteobject;
+		}
+	 
+		@FindBy(xpath = "(//a[text()='Details'])[2]")
+		private WebElement QuoteDetailtab;
+	 
+		public WebElement getQuoteDetailtab() {
+			return QuoteDetailtab;
+		}
+	 
+		@FindBy(xpath = "//button[@title='Edit Quote Name']")
+		private WebElement QuotePencilicon;
+	 
+		public WebElement getQuotePencilicon() {
+			return QuotePencilicon;
+		}
+	 
+		@FindBy(xpath = "//button[@name='SaveEdit']")
+		private WebElement QuoteUpdatesave;
+	 
+		public WebElement getQuoteUpdatesave() {
+			return QuoteUpdatesave;
+		}
+	 
+		@FindBy(xpath = "//input[@name='Name']")
+		private WebElement Quotename1;
+	 
+		public WebElement getQuotename1() {
+			return Quotename1;
+		}
+	 
+		@FindBy(xpath = "//div[@data-target-selection-name='sfdc:RecordField.Quote.Name']//span[@class='test-id__field-value slds-form-element__static slds-grow word-break-ie11']")
+		private WebElement UpdatedQuotename;
+	 
+		public WebElement getUpdatedQuotename() {
+			return UpdatedQuotename;
+		}
+	 
+		// Delete
+		@FindBy(xpath = "//button[@name='Delete']")
+		private WebElement QuoteDelete;
+	 
+		public WebElement getQuoteDelete() {
+			return QuoteDelete;
+		}
+	 
+		@FindBy(xpath = "//button[@title='Delete']")
+		private WebElement QuoteconfirmDelete;
+	 
+		public WebElement getQuoteconfirmDeletee() {
+			return QuoteconfirmDelete;
+		}
+	
 }

@@ -56,7 +56,7 @@ public class OpportunityPage extends DriverClass {
 		return closedate;
 	}
 	
-	@FindBy(xpath = "(//button/span[text()='--None--'])[1]")
+	@FindBy(xpath = "//button[@aria-label='Stage - Current Selection: --None--']")
 	private WebElement stage ;
 	
 
@@ -70,5 +70,43 @@ public class OpportunityPage extends DriverClass {
 
 	public WebElement getsavebtn() {
 		return savebtn;
+	}
+	
+	@CacheLookup
+	@FindBy(xpath = "//li[@title='Details']")
+	private WebElement detailsection;
+
+	public WebElement getdetailsection() {
+		return detailsection;
+	}
+	
+	@FindBy(xpath = "//button[@title='Edit Opportunity Name']")
+	private WebElement pencilicon;
+
+	public WebElement getpencilicon() {
+		return pencilicon;
+	}
+	
+	@FindBy(xpath = "//input[@name='Name']")
+	private WebElement updateoppname;
+
+	public WebElement getupdateoppname() {
+		return updateoppname;
+	}
+	
+	@FindBy(xpath = "//button[@name='SaveEdit']")
+	private WebElement savebtn1 ;
+	
+
+	public WebElement getsavebtn1() {
+		return savebtn1;
+	}
+
+	@FindBy(xpath = "//div[@data-target-selection-name='sfdc:RecordField.Opportunity.Name']//span[@class='test-id__field-value slds-form-element__static slds-grow word-break-ie11']")
+	private WebElement Updatehighlight ;
+	
+
+	public WebElement getUpdatehighlight() {
+		return Updatehighlight;
 	}
 }

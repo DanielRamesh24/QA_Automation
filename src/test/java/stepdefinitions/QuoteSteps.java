@@ -1,5 +1,7 @@
 package stepdefinitions;
 
+import org.openqa.selenium.Keys;
+
 import browserfactory.BrowserInvoke;
 import io.cucumber.java.en.Then;
 import pages.QuotePage;
@@ -55,6 +57,56 @@ public class QuoteSteps extends BrowserInvoke {
 
 		performClick(quote.getQuotesave());
 		System.out.println("Quote Created Successfully");
+
+	}
+	
+	@Then("Click Edit in the dropdown")
+	public void click_Edit_in_the_dropdown() throws InterruptedException {
+
+		Thread.sleep(10000);
+		performClick(quote.getQuoteobject());
+		Thread.sleep(10000);
+		// moveCursorClick(quote.getQuoteDetailtab());
+		// performClick(quote.getQuoteDetailtab());
+		clickable(quote.getQuoteDetailtab());
+
+	}
+
+	@Then("Update the Quote name")
+	public void update_the_Quote_name() throws Exception{
+		performClick(quote.getQuotePencilicon());
+//		clear(quotepage.getQuotename());
+		Thread.sleep(1000);
+		passvalues(quote.getQuotename(), Test_Data.Datasheet("Quote", 1, 4));
+		quote.getQuotename1().sendKeys(Keys.TAB);
+		Thread.sleep(1000);
+
+	}
+
+	@Then("Click Quote Edit Save")
+	public void click_Quote_Edit_Save() throws InterruptedException {
+		Thread.sleep(1000);
+		performClick(quote.getQuoteUpdatesave());
+
+		Thread.sleep(1000);
+
+		System.out.println("Quote Updated Successfully");
+		Thread.sleep(1000);
+
+		elementYellowHighlight(quote.getUpdatedQuotename());
+		Thread.sleep(1000);
+
+	}
+
+	@Then("Click Delete Quote and Confirm Delete")
+	public void click_Delete_Quote_and_Confirm_Delete() throws InterruptedException {
+		Thread.sleep(1000);
+		performClick(quote.getQuoteDelete());
+
+		Thread.sleep(1000);
+		performClick(quote.getQuoteconfirmDeletee());
+
+		System.out.println("Quote Deleted Successfully");
 
 	}
 
