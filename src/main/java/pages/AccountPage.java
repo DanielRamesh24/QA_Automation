@@ -160,4 +160,83 @@ public class AccountPage extends DriverClass {
 		return Savebutton;
 	}
 
+	@FindBy(xpath = "//button[@class='slds-button slds-button_icon-border-filled']")
+	private WebElement dropdown;
+
+	public WebElement getdropdown() {
+		return dropdown;
+	}
+
+	@FindBy(xpath = "//a[@name='Edit']")
+	private WebElement edit;
+
+	@FindBy(xpath = "//span[text()='Edit Account Name']")
+	private WebElement editicon;
+
+	public WebElement getEditicon() {
+		return editicon;
+	}
+
+	@FindBy(xpath = "//input[@name='Name']")
+	private WebElement accedit;
+
+	public WebElement getAccedit() {
+		return accedit;
+	}
+
+	public WebElement getedit() {
+		return edit;
+	}
+
+	@FindBy(xpath = "//input[@name='Name']")
+	private WebElement updateAccountname;
+
+	public WebElement getDropdown() {
+		return dropdown;
+	}
+
+	public WebElement getEdit() {
+		return edit;
+	}
+
+	public WebElement getDetail() {
+		return detail;
+	}
+
+	@FindBy(xpath = "//li/a[text()='Details']")
+	private WebElement detail;
+
+	public WebElement getUpdateAccountname() {
+		return updateAccountname;
+	}
+
+	@FindBy(xpath = "//button[@name='SaveEdit']")
+	private WebElement Saveedit;
+
+	public WebElement getSaveedit() {
+		return Saveedit;
+	}
+
+	@FindBy(xpath = "//div[@data-target-selection-name='sfdc:RecordField.Account.Name']//span[@class='test-id__field-value slds-form-element__static slds-grow word-break-ie11']")
+	private WebElement Updatehighlight;
+
+	public WebElement getUpdatehighlight() {
+		return Updatehighlight;
+	}
+
+	// Delete
+	@FindBy(xpath = "//button[@name='Delete']")
+	private WebElement Deletebtn;
+
+	public WebElement getDeletebtn() {
+		return Deletebtn;
+	}
+
+	@FindBy(xpath = "//button[@title='Delete']")
+	private WebElement ConfirmDeletebtn;
+
+	public WebElement getConfirmDeletebtn() {
+		return ConfirmDeletebtn;
+	}
+
 }

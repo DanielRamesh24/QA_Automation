@@ -4,13 +4,14 @@ import java.io.IOException;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.Keys;
 
 import CommonMethod.baseclass;
 import pages.AccountPage;
 import browserfactory.BrowserInvoke;
-
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
+import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import utils.Test_Data;
 
@@ -97,13 +98,63 @@ public class AccountSteps extends BrowserInvoke {
 
 	}
 
-	@And("click save button")
-	public void click_save_button() throws InterruptedException {
+	@When("click create save button")
+	public void click_create_save_button() throws Exception {
 		staticWait(5);
 		clickable(acc.getSavebutton());
 
 		Thread.sleep(3000);
+	}
 
+	@When("Click dropdown and click edit")
+	public void click_dropdown_and_click_edit() throws Exception {
+		Thread.sleep(2000);
+		performClick(acc.getDetail());
+		Thread.sleep(5000);
+		performClick(acc.getEditicon());
+		clear(acc.getUpdateAccountname());
+
+	}
+
+	@When("Update the Account name")
+	public void update_the_account_name() throws Exception {
+		Thread.sleep(2000);
+		// fieldEdit(editacc.getAccedit(), "Account Updated");
+		passvalues(acc.getAccountname(), Test_Data.Datasheet("Account", 1, 14));
+		Thread.sleep(1000);
+		acc.getAccedit().sendKeys(Keys.TAB);
+
+	}
+	
+	@Then("User Click edit Save button")
+	public void user_click_edit_save_button() throws Exception {
+		Thread.sleep(1000);
+
+		performClick(acc.getSaveedit());
+
+		System.out.println("Account updated successfully");
+
+		Thread.sleep(3000);
+
+		elementYellowHighlight(acc.getUpdatehighlight());
+
+		Thread.sleep(5000);
+	}
+
+
+	@Then("User Click Delete button")
+	public void user_click_delete_button() throws Exception {
+		Thread.sleep(1000);
+
+		performClick(acc.getDeletebtn());
+		Thread.sleep(2000);
+	}
+
+	@Then("User Click Delete to Confirm")
+	public void user_click_delete_to_confirm() throws Exception {
+		performClick(acc.getConfirmDeletebtn());
+		Thread.sleep(2000);
+		System.out.println("Account Deleted successfully");
 	}
 
 }
