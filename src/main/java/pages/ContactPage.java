@@ -32,7 +32,7 @@ public class ContactPage extends DriverClass {
 	@FindBy(xpath = "//input[@role='combobox']")
 	private WebElement accName;
 	
-	@FindBy(xpath = "//lightning-base-combobox-formatted-text[@title='Test Asset Account']")
+	@FindBy(xpath = "//lightning-base-combobox-formatted-text[@title='Vignesh Testing']")
 	private WebElement selAccount;
 	
 	@FindBy(xpath = "//input[@name='Title']")
@@ -41,9 +41,74 @@ public class ContactPage extends DriverClass {
 	@FindBy(xpath = "//button[@name='SaveEdit']")
 	private WebElement saveBtn;
 	
-	@FindBy(xpath = "//*[@data-label='Details']")
+	@FindBy(xpath = "//a[text()='Details']")
 	private WebElement detailTab;
 	
+	@FindBy(xpath = "//lightning-formatted-name[@data-output-element-id='output-field']")
+	private WebElement contactName;
+	
+	@FindBy(xpath = "//button[@class='slds-button slds-button_icon-border-filled']")
+	private WebElement contDroDown;
+	
+	
+	@FindBy(xpath = "//span[text()='Edit']")
+	private WebElement contEdit;
+	
+	@FindBy(xpath = "//button[@title='Delete']")
+	private WebElement contdelete;
+	
+	@FindBy(xpath = "//span[@class='slds-truncate'][text()='Delete']")
+	private WebElement dropdelete;
+	//a[@name='Delete']
+	
+	public WebElement getDropdelete() {
+		return dropdelete;
+	}
+
+	public WebElement getContdelete() {
+		return contdelete;
+	}
+
+	@FindBy(xpath = "//input[@name='firstName']")
+	private WebElement editFirstName;
+	
+	
+	@FindBy(xpath = "//input[@name='lastName']")
+	private WebElement editLastName;
+	
+	
+	@FindBy(xpath = "//button[text()='Save']")
+	private WebElement clickSave;
+	
+	public WebElement getClickSave() {
+		return clickSave;
+	}
+
+	public WebElement getContEdit() {
+		return contEdit;
+	}
+
+	public WebElement getEditFirstName() {
+		return editFirstName;
+	}
+
+	public WebElement getEditLastName() {
+		return editLastName;
+	}
+	
+	
+	
+
+
+	
+	public WebElement getContDroDown() {
+		return contDroDown;
+	}
+
+	public WebElement getContactName() {
+		return contactName;
+	}
+
 	public WebElement getContTab() {
 		return contTab;
 	}
@@ -56,6 +121,10 @@ public class ContactPage extends DriverClass {
 		return fstName;
 	} 
 	
+	public WebElement getDetailTab() {
+		return detailTab;
+	}
+
 	public WebElement getLstName() {
 		return lstName;
 	}
@@ -76,9 +145,7 @@ public class ContactPage extends DriverClass {
 		return saveBtn;
 	}
 	
-	public WebElement getDeatilTab() {
-		return detailTab;
-	}
+
 	
 	public void filldata(String a,String b,String c) {
 		

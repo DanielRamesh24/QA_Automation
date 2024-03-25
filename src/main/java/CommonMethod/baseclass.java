@@ -6,6 +6,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -73,6 +74,20 @@ public class baseclass {
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		js.executeScript("arguments[0].setAttribute('style', 'background: yellow; border: 2px solid red;');", c);
  
+	}
+	public static void hoverElement(WebElement c)
+	{
+	Actions actions = new Actions(driver);
+
+	//Hovering on main menu
+	actions.moveToElement(c);
+	}
+	
+	
+	public static void elementRedHighlight(WebElement c) {
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("arguments[0].style.background='Red'",c);
+
 	}
 	
 	public static void elementLgreenHighlight(WebElement c) {

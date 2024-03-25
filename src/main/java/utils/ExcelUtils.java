@@ -36,7 +36,15 @@ public class ExcelUtils {
 	}
 
 	public static String readExcel(String Sheetname, String TestCase_ID, String HeaderValue) throws Exception{// to read and get the data from the excel
+		filelocation = new FileInputStream(Constants.datafilepath);
+//		String fileExtension = FilenameUtils.getExtension(Constant.datafilepath);
+		String fileExtension = Constants.datafilepath.substring(Constants.datafilepath.indexOf("."));// to get the= extension of the file
 		
+		if (fileExtension.equals(".xlsx")) {
+			wb = new XSSFWorkbook(filelocation);
+		} else if (fileExtension.equals(".xls")) {
+			wb = new HSSFWorkbook(filelocation);
+		}
 		if(!(TestCase_ID.equalsIgnoreCase(""))) {// Condition for custom exception
 		
 		Object result = new Object();
@@ -46,25 +54,34 @@ public class ExcelUtils {
 		totalrows = sheet.getLastRowNum();
 
 		totalcolumns = row.getLastCellNum();
-
-		for (int i = 0; i <= totalrows; i++) { // iteration for rows
+		System.out.println("totalrows is "+totalrows);
+		System.out.println("totalcolumns is "+totalcolumns);
+		for (int i = 0; i <=totalrows; i++) { // iteration for rows
+			System.out.println("i  "+i);
+			System.out.println("sheet.getRow(i)"+sheet.getRow(i));
 			String TCID = sheet.getRow(i).getCell(0).getStringCellValue();
+			System.out.println("TCID"+TCID);
 			if (TCID.equalsIgnoreCase(TestCase_ID)) {
-				System.out.println(TCID);
+				System.out.println("sheet"+sheet);
 				for (int j = 1; j < totalcolumns; j++) {// iteration for columns
 					
 					String TestdataHeadervalues = sheet.getRow(0).getCell(j).getStringCellValue();
+					System.out.println("TestdataHeadervalues "+TestdataHeadervalues);
 					if (TestdataHeadervalues.equalsIgnoreCase(HeaderValue)) {
 						cell = sheet.getRow(i).getCell(j);
-						System.out.println(cell);
+						System.out.println("cell"+cell);
 						if (cell != null) {
-							switch (cell.getCellType()) { // to get different types of cell values
+							System.out.println("cell.getCellType() is "+cell.getCellType());
+							switch (cell.getCellType())
+							
+							{ // to get different types of cell values
 							case NUMERIC:// numeric value in excel
 								result = cell.getNumericCellValue();
 								break;
 
 							case STRING: // string value in excel
 								result = cell.getStringCellValue();
+								System.out.println("cell.getStringCellValue() is "+result);
 								break;
 
 							case BOOLEAN: // boolean value in excel
